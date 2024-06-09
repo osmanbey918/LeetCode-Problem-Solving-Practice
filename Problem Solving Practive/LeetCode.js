@@ -103,7 +103,7 @@ console.log(commonChars(["bella","label","roller"]))
 console.log(Words(["a", "b", "c"], "aadsfasf absbs bbab cadsfafs"));
 // Expected output: "a a b c"*/
 
-
+/*
 var Words = function(dictionary, sentence) {
     let res = [];
     let sen = sentence.split(' ');
@@ -122,5 +122,5 @@ var Words = function(dictionary, sentence) {
     return res.join(' ');
 };
 console.log(Words(["catt","cat","bat","rat"], "the cattle was rattled by the battery"));
-
+*/
 
