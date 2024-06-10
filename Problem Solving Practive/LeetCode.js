@@ -124,3 +124,19 @@ var Words = function(dictionary, sentence) {
 console.log(Words(["catt","cat","bat","rat"], "the cattle was rattled by the battery"));
 */
 
+//day 1
+//10th june
+
+var heightChecker = function(heights) {
+
+    let count = 0
+    let sorted = heights.slice().sort((a, b) => a - b);
+    
+    for (let i = 0; i < heights.length; i++){
+        if(heights[i] !== sorted[i]){
+            count++
+        }
+    }
+    return count
+};
+console.log(heightChecker([1,1,4,2,1,3]))
