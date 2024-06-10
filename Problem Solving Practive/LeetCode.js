@@ -149,15 +149,19 @@ console.log(heightChecker([1,1,4,2,1,3]))
 //  2259. Remove Digit From Number to Maximize Result
 
 var removeDigit = function(number, digit) {
-    let res = number.replace(digit, '')
-/*    for (let i = 0; i < number.length; i++) {
-        if(number[i] == digit){
-         //   res += number.slice(i, i + 1)
-            res += number.replace(number[i], '')
+    let maxNumber = ""; // Initialize an empty string to keep track of the maximum number
+
+    for (let i = 0; i < number.length; i++) {
+        if (number[i] === digit) {
+            // Create a new string with the current occurrence of digit removed
+            let newNumber = number.slice(0, i) + number.slice(i + 1);
+            // Update maxNumber if the new string is greater than the current maxNumber
+            if (maxNumber === "" || newNumber > maxNumber) {
+                maxNumber = newNumber;
+            }
         }
-        res += number[i]
     }
-    return res*/
-    return number.replace(digit, '')
+
+    return maxNumber;
 };
 console.log(removeDigit("1231", "1"))
