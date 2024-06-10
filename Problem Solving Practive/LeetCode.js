@@ -124,8 +124,10 @@ var Words = function(dictionary, sentence) {
 console.log(Words(["catt","cat","bat","rat"], "the cattle was rattled by the battery"));
 */
 
-//day 1
-//10th june
+
+/*
+//day 1 ------------------------------------------------------------------------------------------------------------------------------------------
+//10th june ------------------------------------------------------------------------------------------------------------------------------------
 
 var heightChecker = function(heights) {
 
@@ -140,3 +142,22 @@ var heightChecker = function(heights) {
     return count
 };
 console.log(heightChecker([1,1,4,2,1,3]))
+*/
+
+//                          -------------------------------------------------------------------------------------------------------
+
+//  2259. Remove Digit From Number to Maximize Result
+
+var removeDigit = function(number, digit) {
+    let res = number.replace(digit, '')
+/*    for (let i = 0; i < number.length; i++) {
+        if(number[i] == digit){
+         //   res += number.slice(i, i + 1)
+            res += number.replace(number[i], '')
+        }
+        res += number[i]
+    }
+    return res*/
+    return number.replace(digit, '')
+};
+console.log(removeDigit("1231", "1"))
