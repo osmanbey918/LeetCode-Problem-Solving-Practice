@@ -147,7 +147,7 @@ console.log(heightChecker([1,1,4,2,1,3]))
 //                          -------------------------------------------------------------------------------------------------------
 
 //  2259. Remove Digit From Number to Maximize Result
-
+/*
 var removeDigit = function(number, digit) {
     let maxNumber = ""; // Initialize an empty string to keep track of the maximum number
 
@@ -164,4 +164,27 @@ var removeDigit = function(number, digit) {
 
     return maxNumber;
 };
-console.log(removeDigit("1231", "1"))
+console.log(removeDigit("1231", "1"))*/
+
+
+
+
+//day 2 ------------------------------------------------------------------------------------------------------------------------------------------
+//11th june ------------------------------------------------------------------------------------------------------------------------------------
+
+
+var countCharacters = function(words, chars) {
+    let res = []
+    let sortc = chars.split('').sort().join('');
+    let c = 0
+    for (let i = 0; i < words.length; i++){
+        let sortedWord = words[i].split('').sort().join('');
+        let s = sortc
+        if(s.includes(sortedWord)){
+          res.push(words[i])
+          c++
+        }
+    }
+    return c
+};
+console.log(countCharacters(["cat","bt","hat","tree"], "atach"))
