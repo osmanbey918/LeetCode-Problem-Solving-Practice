@@ -191,7 +191,7 @@ console.log(countCharacters(["cat","bt","hat","tree"], "atach"))*/
 
 
 // day3
-
+/*
 
 var minIncrementForUnique = function(nums) {
 
@@ -207,4 +207,28 @@ var minIncrementForUnique = function(nums) {
        }
        return move
    };
-   console.log(minIncrementForUnique([1,1,2,2,3,4,4,7]))
+   console.log(minIncrementForUnique([1,1,2,2,3,4,4,7]))*/
+
+
+
+   
+var reverseParentheses = function(s) {
+    let stack = []
+    for (let i = 0; i < s.length; i++) {
+        if(s[i] === ')'){
+            let t = ''
+            while(stack[stack.length - 1] !== '('){
+                t += stack.pop()
+            }
+            stack.pop()
+            for (let c of t) {
+                stack.push(c);
+            }
+        }else{
+            stack.push(s[i])
+        }
+        
+    }
+    return stack.join('');
+};
+console.log(reverseParentheses('(abcd)'))
