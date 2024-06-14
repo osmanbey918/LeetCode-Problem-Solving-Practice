@@ -171,7 +171,7 @@ console.log(removeDigit("1231", "1"))*/
 
 //day 2 ------------------------------------------------------------------------------------------------------------------------------------------
 //11th june ------------------------------------------------------------------------------------------------------------------------------------
-
+/*
 
 var countCharacters = function(words, chars) {
     let res = []
@@ -187,4 +187,24 @@ var countCharacters = function(words, chars) {
     }
     return c
 };
-console.log(countCharacters(["cat","bt","hat","tree"], "atach"))
+console.log(countCharacters(["cat","bt","hat","tree"], "atach"))*/
+
+
+// day3
+
+
+var minIncrementForUnique = function(nums) {
+
+    nums.sort((a, b) => a - b);
+
+       let move = 0;
+       let n = 1
+       for ( n in nums){
+           if(nums[n] <= nums[n - 1]){
+               move += nums[n - 1] - nums[n] +1
+               nums[n] = nums[n - 1] + 1
+           }
+       }
+       return move
+   };
+   console.log(minIncrementForUnique([1,1,2,2,3,4,4,7]))
