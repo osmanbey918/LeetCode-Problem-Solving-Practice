@@ -1,16 +1,16 @@
- /*function fun(s) {
+/*function fun(s) {
 
-    for (let i = 0; i <= s.length; i++) {
-        if(s[i] == '(' || s[i] == '{' || s[i] == '[') {
-            if (s[i + 1] == ')'  || s[i + 1] == '{' || s[i + 1] == '[') {
-                
-            }
-            else {
-                return false;
-            }
-        }
-    }
-    return true;
+   for (let i = 0; i <= s.length; i++) {
+       if(s[i] == '(' || s[i] == '{' || s[i] == '[') {
+           if (s[i + 1] == ')'  || s[i + 1] == '{' || s[i + 1] == '[') {
+               
+           }
+           else {
+               return false;
+           }
+       }
+   }
+   return true;
 };
 const sun = '(){}';
 console.log(fun(sun));*//*
@@ -211,31 +211,31 @@ var minIncrementForUnique = function(nums) {
 
 
 //day 4
-   /*
+/*
 var reverseParentheses = function(s) {
-    let stack = []
-    for (let i = 0; i < s.length; i++) {
-        if(s[i] === ')'){
-            let t = ''
-            while(stack.length && stack[stack.length - 1] !== '('){
-                t += stack.pop()
-            }
-            stack.pop()
-            for (let c of t) {
-                stack.push(c);
-            }
-        }else{
-            stack.push(s[i])
-        }
-        
-    }
-    return stack.join('');
+ let stack = []
+ for (let i = 0; i < s.length; i++) {
+     if(s[i] === ')'){
+         let t = ''
+         while(stack.length && stack[stack.length - 1] !== '('){
+             t += stack.pop()
+         }
+         stack.pop()
+         for (let c of t) {
+             stack.push(c);
+         }
+     }else{
+         stack.push(s[i])
+     }
+     
+ }
+ return stack.join('');
 };
 console.log(reverseParentheses('(abcd)'))*/
 
 
 //day 5
-
+/*
 var checkRecord = function(s) {
     let aa = 0;
     let h = ''
@@ -249,4 +249,31 @@ var checkRecord = function(s) {
     }
     return aa > 1 ? false : true;
 };
-console.log(checkRecord("LALl"))
+console.log(checkRecord("LALl"))*/
+
+// Day 6
+
+var predictTheWinner = function (nums) {
+    let ply1 = 0;
+    let ply2 = 0;
+    let end = nums.length - 1
+    let start = 0;
+    while (start <= end ) {
+
+        ply1 = Math.max(nums[start], nums[end])
+        if(end > start ){
+            end--
+        }else{
+            start++
+        }
+
+        if(start >= end){
+            ply2 = Math.max(nums[start], nums[end])
+            start++
+        }else{
+            end--
+        }
+    }
+    return ply1 > ply2
+};
+console.log(predictTheWinner([1, 5,233, 7, 21]))
