@@ -210,14 +210,14 @@ var minIncrementForUnique = function(nums) {
    console.log(minIncrementForUnique([1,1,2,2,3,4,4,7]))*/
 
 
-
-   
+//day 4
+   /*
 var reverseParentheses = function(s) {
     let stack = []
     for (let i = 0; i < s.length; i++) {
         if(s[i] === ')'){
             let t = ''
-            while(stack[stack.length - 1] !== '('){
+            while(stack.length && stack[stack.length - 1] !== '('){
                 t += stack.pop()
             }
             stack.pop()
@@ -231,4 +231,22 @@ var reverseParentheses = function(s) {
     }
     return stack.join('');
 };
-console.log(reverseParentheses('(abcd)'))
+console.log(reverseParentheses('(abcd)'))*/
+
+
+//day 5
+
+var checkRecord = function(s) {
+    let aa = 0;
+    let h = ''
+    for (let i = 0; i < s.length; i++) {
+        if(s[i] === 'A'){
+            aa++
+        }else if(s[i] === 'L' && s[i + 1] === 'L' && s[i + 2] === 'L' ){
+            return false
+        }
+        
+    }
+    return aa > 1 ? false : true;
+};
+console.log(checkRecord("LALl"))
