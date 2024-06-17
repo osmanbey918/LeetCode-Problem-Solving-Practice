@@ -277,7 +277,7 @@ var predictTheWinner = function (nums) {
     return ply1 > ply2
 };
 console.log(predictTheWinner([1, 5,233, 7, 21]))*/
-
+/*
 var judgeSquareSum = function(c) {
 
     for (let i = 0; i * i <= c; i++) {
@@ -289,4 +289,22 @@ var judgeSquareSum = function(c) {
     }
     return false;
 };
-console.log(judgeSquareSum(2))
+console.log(judgeSquareSum(2))*/
+
+
+
+var dailyTemperatures = function (temperatures) {
+    let res = []
+    let start = 0, end = temperatures.length - 1, c = 0;
+    while (temperatures[start] < temperatures[end]) {
+        if (temperatures[start] >= temperatures[end]) {
+            c++
+            start++
+        }
+        res.push()
+
+    }
+
+    return res
+};
+console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))
