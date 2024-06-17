@@ -252,7 +252,7 @@ var checkRecord = function(s) {
 console.log(checkRecord("LALl"))*/
 
 // Day 6
-
+/*
 var predictTheWinner = function (nums) {
     let ply1 = 0;
     let ply2 = 0;
@@ -276,4 +276,17 @@ var predictTheWinner = function (nums) {
     }
     return ply1 > ply2
 };
-console.log(predictTheWinner([1, 5,233, 7, 21]))
+console.log(predictTheWinner([1, 5,233, 7, 21]))*/
+
+var judgeSquareSum = function(c) {
+
+    for (let i = 0; i * i <= c; i++) {
+        for (let j = 0; j * j <= c; j++) {
+            if (i * i + j * j === c) {
+                return true;
+            }
+        }
+    }
+    return false;
+};
+console.log(judgeSquareSum(2))
