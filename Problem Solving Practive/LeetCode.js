@@ -313,11 +313,13 @@ console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))*/
 var prefixesDivBy5 = function (nums) {
 
     let current = 0;
+    let ans = ''
     let res = [];
     for (let i = 0; i < nums.length; i++) {
+        ans += current
         current = (current * 2 + nums[i]);
         res.push(current);
     }
-    return res;
+    return res + ans;
 };
 console.log(prefixesDivBy5([0, 1, 1, 0, 1]))
