@@ -291,14 +291,14 @@ var judgeSquareSum = function(c) {
 };
 console.log(judgeSquareSum(2))*/
 
-
+/*
 
 var dailyTemperatures = function (temperatures) {
     let res = []
-    let start = 0, end = temperatures.length - 1, c = 0;
+    let start = 0, end = temperatures.length - 1, c = 1;
     while (temperatures[start] < temperatures[end]) {
-        if (temperatures[start] >= temperatures[end]) {
-            c++
+        if (temperatures[start] >= temperatures[c]) {
+            
             start++
         }
         res.push()
@@ -307,4 +307,17 @@ var dailyTemperatures = function (temperatures) {
 
     return res
 };
-console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))
+console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))*/
+
+
+var prefixesDivBy5 = function (nums) {
+
+    let current = 0;
+    let res = [];
+    for (let i = 0; i < nums.length; i++) {
+        current = (current * 2 + nums[i]);
+        res.push(current);
+    }
+    return res;
+};
+console.log(prefixesDivBy5([0, 1, 1, 0, 1]))
