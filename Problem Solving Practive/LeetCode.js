@@ -323,7 +323,27 @@ var prefixesDivBy5 = function (nums) {
     return res + ans;
 };
 console.log(prefixesDivBy5([0, 1, 1, 0, 1]))*/
-
+/*
 let set = new Set([1,2,3,4])
 set.delete(3)
-console.log(set[0])
+console.log(set[0])*/
+
+
+var backspaceCompare = function(s, t) {
+    let stack = []
+    for(let ss of s){
+        stack.push(ss)
+        if(ss == '#'){
+            stack.pop()
+        }
+    }
+    let s2 = []
+        for(let tt of t){
+        s2.push(tt)
+        if(tt == '#'){
+            s2.pop()
+        }
+    }
+    return stack.length == s2.length
+};
+console.log(backspaceCompare("xywrrmp", "xywrrmu#p"))
