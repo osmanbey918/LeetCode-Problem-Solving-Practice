@@ -308,7 +308,7 @@ var dailyTemperatures = function (temperatures) {
     return res
 };
 console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))*/
-
+/*
 
 var prefixesDivBy5 = function (nums) {
 
@@ -322,4 +322,8 @@ var prefixesDivBy5 = function (nums) {
     }
     return res + ans;
 };
-console.log(prefixesDivBy5([0, 1, 1, 0, 1]))
+console.log(prefixesDivBy5([0, 1, 1, 0, 1]))*/
+
+let set = new Set([1,2,3,4])
+set.delete(3)
+console.log(set[0])
