@@ -327,7 +327,7 @@ console.log(prefixesDivBy5([0, 1, 1, 0, 1]))*/
 let set = new Set([1,2,3,4])
 set.delete(3)
 console.log(set[0])*/
-
+/*
 
 var backspaceCompare = function(s, t) {
     let stack = []
@@ -346,4 +346,23 @@ var backspaceCompare = function(s, t) {
     }
     return stack.length == s2.length
 };
-console.log(backspaceCompare("xywrrmp", "xywrrmu#p"))
+console.log(backspaceCompare("xywrrmp", "xywrrmu#p"))*/
+
+
+
+var minInsertions = function (s) {
+
+    let arr = s.split('').sort().join('')
+    let stack = []
+    let ans = 0
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] == '('){
+            ans+=2
+        }else {
+            ans--
+        }
+        
+    }
+    return ans
+};
+console.log(minInsertions("))())("))
