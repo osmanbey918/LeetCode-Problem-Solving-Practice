@@ -348,21 +348,64 @@ var backspaceCompare = function(s, t) {
 };
 console.log(backspaceCompare("xywrrmp", "xywrrmu#p"))*/
 
-
+/*
 
 var minInsertions = function (s) {
 
     let arr = s.split('').sort().join('')
     let stack = []
-    let ans = 0
+    let ans = 0, c = 0
     for (let i = 0; i < arr.length; i++) {
         if(arr[i] == '('){
-            ans+=2
+            ans++
         }else {
-            ans--
+            c++
         }
         
     }
+    if(ans < c && c > 0){
+        
+
+    }
     return ans
 };
-console.log(minInsertions("))())("))
+console.log(minInsertions("))())("))*/
+
+/*
+var nextGreaterElement = function(n) {
+    let s = n.toString()
+    return Number(s.split('').sort().join(''))
+    
+};
+
+
+console.log(nextGreaterElement(21))*/
+
+
+
+var maxSatisfied = function (customers, grumpy, minutes) {
+    let initial = 0
+    let max = 0
+    let extra = 0
+    for (let i = 0; i < grumpy.length; i++) {
+        if (grumpy[i] == 0) {
+            initial += customers[i]
+        } else if (i < minutes) {
+            extra += customers[i]
+        }
+    }
+            max = extra
+        for (let i = minutes; i < grumpy.length; i++) {
+        
+            extra += customers[i] * grumpy[i];
+            extra -= customers[i - minutes] * grumpy[i - minutes];
+            max = Math.max(max, extra);
+    
+        
+    }
+
+
+
+    return max + initial
+};
+console.log(maxSatisfied([1, 0, 1, 2, 1, 1, 7, 5], [0, 1, 0, 1, 0, 1, 0, 1], 3))
