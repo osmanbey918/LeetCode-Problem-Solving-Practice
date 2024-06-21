@@ -382,7 +382,7 @@ var nextGreaterElement = function(n) {
 console.log(nextGreaterElement(21))*/
 
 
-
+/*
 var maxSatisfied = function (customers, grumpy, minutes) {
     let initial = 0
     let max = 0
@@ -394,18 +394,58 @@ var maxSatisfied = function (customers, grumpy, minutes) {
             extra += customers[i]
         }
     }
-            max = extra
-        for (let i = minutes; i < grumpy.length; i++) {
-        
-            extra += customers[i] * grumpy[i];
-            extra -= customers[i - minutes] * grumpy[i - minutes];
-            max = Math.max(max, extra);
-    
-        
+    max = extra
+    for (let i = minutes; i < grumpy.length; i++) {
+
+        extra += customers[i] * grumpy[i];
+        extra -= customers[i - minutes] * grumpy[i - minutes];
+        max = Math.max(max, extra);
     }
-
-
-
     return max + initial
 };
-console.log(maxSatisfied([1, 0, 1, 2, 1, 1, 7, 5], [0, 1, 0, 1, 0, 1, 0, 1], 3))
+console.log(maxSatisfied([1, 0, 1, 2, 1, 1, 7, 5], [0, 1, 0, 1, 0, 1, 0, 1], 3))*/
+
+/**
+ * @param {string} text
+ * @return {number}
+ */
+var maxNumberOfBalloons = function (text) {
+    let a = 0
+    let b = 0
+    let n = 0
+    let l = 0
+    let o = 0
+    let cl = 0
+    let ol = 0
+    for (let i = 0; i < text.length; i++) {
+        switch (text[i]) {
+            case 'b':
+                b++;
+                break;
+            case 'a':
+                a++;
+                break;
+            case 'n':
+                n++;
+                break;
+            case 'l':
+                cl++;
+                if (cl == 2) {
+                    l++;
+                    cl = 0
+                }
+                break;
+            case 'o':
+                ol++;
+                if (ol == 2) {
+                    o++;
+                    ol = 0
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    return Math.min(a, b, l, o, n)
+};
