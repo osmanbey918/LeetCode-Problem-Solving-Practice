@@ -465,7 +465,7 @@ var findMaxK = function(nums) {
 };
 console.log(findMaxK([-10, 8, 6, 7, -2, -7, -3]))*/
 
-
+/*
 var kidsWithCandies = function (candies, extraCandies) {
     let res = []
     let max = Math.max(...candies);
@@ -480,4 +480,12 @@ var kidsWithCandies = function (candies, extraCandies) {
     }
     return res
 };
-console.log(kidsWithCandies([2, 3, 5, 1, 3], 3))
+console.log(kidsWithCandies([2, 3, 5, 1, 3], 3))*/
+
+var distributeCandies = function(candyType) {
+    let unique = new Set(candyType)
+    let uniquelength = unique.size
+    let max = candyType.length / 2
+    return Math.min(uniquelength, max)
+};
+console.log(distributeCandies([1,1,2,3]))
