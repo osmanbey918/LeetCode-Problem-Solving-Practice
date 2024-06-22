@@ -418,33 +418,33 @@ let o = 0
 let cl = 0
 let ol = 0
 for (let i = 0; i < text.length; i++) {
-    switch (text[i]) {
-        case 'b':
-            b++;
-            break;
-        case 'a':
-            a++;
-            break;
-        case 'n':
-            n++;
-            break;
-        case 'l':
-            cl++;
-            if (cl == 2) {
-                l++;
-                cl = 0
-            }
-            break;
-        case 'o':
-            ol++;
-            if (ol == 2) {
-                o++;
-                ol = 0
-            }
-            break;
-        default:
-            break;
-    }
+switch (text[i]) {
+    case 'b':
+        b++;
+        break;
+    case 'a':
+        a++;
+        break;
+    case 'n':
+        n++;
+        break;
+    case 'l':
+        cl++;
+        if (cl == 2) {
+            l++;
+            cl = 0
+        }
+        break;
+    case 'o':
+        ol++;
+        if (ol == 2) {
+            o++;
+            ol = 0
+        }
+        break;
+    default:
+        break;
+}
 }
 
 return Math.min(a, b, l, o, n)
@@ -452,7 +452,7 @@ return Math.min(a, b, l, o, n)
 
 
 
-
+/*
 var findMaxK = function(nums) {
     let res = -1;
     let numSet = new Set(nums);
@@ -463,4 +463,21 @@ var findMaxK = function(nums) {
     }
     return res;
 };
-console.log(findMaxK([-10, 8, 6, 7, -2, -7, -3]))
+console.log(findMaxK([-10, 8, 6, 7, -2, -7, -3]))*/
+
+
+var kidsWithCandies = function (candies, extraCandies) {
+    let res = []
+    let max = Math.max(...candies);
+    let t = 0
+    for (let i = 0; i < candies.length; i++) {
+        t = candies[i] + extraCandies
+        if (t >= max) {
+            res.push(true)
+        } else {
+            res.push(false)
+        }
+    }
+    return res
+};
+console.log(kidsWithCandies([2, 3, 5, 1, 3], 3))
