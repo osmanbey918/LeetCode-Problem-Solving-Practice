@@ -408,44 +408,59 @@ console.log(maxSatisfied([1, 0, 1, 2, 1, 1, 7, 5], [0, 1, 0, 1, 0, 1, 0, 1], 3))
 /**
  * @param {string} text
  * @return {number}
- */
+ *//*
 var maxNumberOfBalloons = function (text) {
-    let a = 0
-    let b = 0
-    let n = 0
-    let l = 0
-    let o = 0
-    let cl = 0
-    let ol = 0
-    for (let i = 0; i < text.length; i++) {
-        switch (text[i]) {
-            case 'b':
-                b++;
-                break;
-            case 'a':
-                a++;
-                break;
-            case 'n':
-                n++;
-                break;
-            case 'l':
-                cl++;
-                if (cl == 2) {
-                    l++;
-                    cl = 0
-                }
-                break;
-            case 'o':
-                ol++;
-                if (ol == 2) {
-                    o++;
-                    ol = 0
-                }
-                break;
-            default:
-                break;
+let a = 0
+let b = 0
+let n = 0
+let l = 0
+let o = 0
+let cl = 0
+let ol = 0
+for (let i = 0; i < text.length; i++) {
+    switch (text[i]) {
+        case 'b':
+            b++;
+            break;
+        case 'a':
+            a++;
+            break;
+        case 'n':
+            n++;
+            break;
+        case 'l':
+            cl++;
+            if (cl == 2) {
+                l++;
+                cl = 0
+            }
+            break;
+        case 'o':
+            ol++;
+            if (ol == 2) {
+                o++;
+                ol = 0
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+return Math.min(a, b, l, o, n)
+};*/
+
+
+
+
+var findMaxK = function(nums) {
+    let res = -1;
+    let numSet = new Set(nums);
+    for (let num of numSet) {
+        if (numSet.has(-num)) {
+            res = Math.max(res, num);
         }
     }
-
-    return Math.min(a, b, l, o, n)
+    return res;
 };
+console.log(findMaxK([-10, 8, 6, 7, -2, -7, -3]))
