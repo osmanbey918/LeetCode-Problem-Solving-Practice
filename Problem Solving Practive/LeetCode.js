@@ -419,31 +419,31 @@ let cl = 0
 let ol = 0
 for (let i = 0; i < text.length; i++) {
 switch (text[i]) {
-    case 'b':
-        b++;
-        break;
-    case 'a':
-        a++;
-        break;
-    case 'n':
-        n++;
-        break;
-    case 'l':
-        cl++;
-        if (cl == 2) {
-            l++;
-            cl = 0
-        }
-        break;
-    case 'o':
-        ol++;
-        if (ol == 2) {
-            o++;
-            ol = 0
-        }
-        break;
-    default:
-        break;
+ case 'b':
+     b++;
+     break;
+ case 'a':
+     a++;
+     break;
+ case 'n':
+     n++;
+     break;
+ case 'l':
+     cl++;
+     if (cl == 2) {
+         l++;
+         cl = 0
+     }
+     break;
+ case 'o':
+     ol++;
+     if (ol == 2) {
+         o++;
+         ol = 0
+     }
+     break;
+ default:
+     break;
 }
 }
 
@@ -481,7 +481,7 @@ var kidsWithCandies = function (candies, extraCandies) {
     return res
 };
 console.log(kidsWithCandies([2, 3, 5, 1, 3], 3))*/
-
+/*
 var distributeCandies = function(candyType) {
     let unique = new Set(candyType)
     let uniquelength = unique.size
@@ -489,3 +489,35 @@ var distributeCandies = function(candyType) {
     return Math.min(uniquelength, max)
 };
 console.log(distributeCandies([1,1,2,3]))
+*/
+/*
+var plusOne = function (digits) {
+    
+    let last = digits.slice([digits.length - 1])
+    /*   if (last == 9) {
+        digits.push(1, 0)
+        } else {
+            last++
+        digits.push(last)
+        
+        }*/
+/*
+return last
+};
+console.log(plusOne([1, 2, 9]))*/
+
+
+
+var arrayPairSum = function (nums) {
+    nums.sort((a, b) => a - b)
+    let i = 0;
+
+    let max = 0
+    while (i < nums.length) {
+        max += Math.min(nums[i], nums[i + 1])
+        i++
+        i++
+    }
+    return max
+};
+console.log(arrayPairSum([1, 4, 3, 2]))
