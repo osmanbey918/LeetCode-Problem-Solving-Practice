@@ -1,30 +1,24 @@
-var minKBitFlips = function (nums, k) {
-    let flip = 0;
-    if(nums.length < k && nums.indexOf(0)){
-        return -1
-        
-    }
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] == 0) {
-            let p = i
-            flip++
-            for (let j = 0; j < k; j++) {
-                if (nums[p] == 0) {
-                    nums[p] = 1
-                } else {
-                    nums[p] = 0
-                }
-                p++
+//First Problem solved in Hard DIfficulty
+/*
+var minKBitFlips = function(nums, k) {
+    const n = nums.length;
+    let flipCount = 0; // Count the total number of flips
+    let currentFlips = 0; // Track the number of flips affecting the current position
 
-            }
+    for (let i = 0; i < n; i++) {
+        if (i >= k && nums[i - k] > 1) {
+            // Remove the effect of the flip that started k positions back
+            currentFlips ^= 1;
+            nums[i - k] -= 2; // Restore the original value
         }
         
-    }
-    for(let n of nums){
-        if (n == 0){
-            return -1
+        if ((nums[i] ^ currentFlips) === 0) { // Need to flip if the current value is 0
+            if (i + k > n) return -1; // If flipping k elements exceeds array bounds, return -1
+            flipCount++;
+            currentFlips ^= 1;
+            nums[i] += 2; // Mark the start of a flip
         }
     }
-    return flip
-};
-console.log(minKBitFlips([1, 1, 0], 2))
+    
+    return flipCount;
+};*/
