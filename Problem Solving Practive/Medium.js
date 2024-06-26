@@ -18,6 +18,9 @@ console.log(numPairsDivisibleBy60([30, 20, 150, 100, 40]))
 console.log(20 % 60)
 */
 
+
+// Problem   2
+/*
 var setZeroes = function(matrix) {
     let rows = new Set();
     let cols = new Set();
@@ -44,4 +47,17 @@ var setZeroes = function(matrix) {
     return matrix;
 };
 
-console.log(setZeroes([[1, 1, 1], [1, 0, 1], [1, 1, 1]]))
+console.log(setZeroes([[1, 1, 1], [1, 0, 1], [1, 1, 1]]))*/
+
+
+
+var addTwoNumbers = function(l1, l2) {
+    let ans = parseInt(l1.reverse().join('')) + parseInt(l2.reverse().join(''))
+    let a = ans.toString()
+    let arr = []
+    for ( i of a) {
+        arr.push(parseInt(i))
+    }
+    return arr.reverse()
+};
+console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]))
