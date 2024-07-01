@@ -1,5 +1,5 @@
 
-/*
+
 function zero(num) {
     let c = 0
     for (let i = 0; i < num.length; i++) {
@@ -11,8 +11,8 @@ function zero(num) {
 
 return num
 }
-console.log(zero([0,1,2,3,0,2,3,40,12]))*/
-/*
+console.log(zero([0,1,2,3,0,2,3,40,12]))
+
 function moveZeroes(nums) {
     let nonZeroIdx = 0; // Pointer to track the position to place non-zero elements
     
@@ -28,7 +28,7 @@ function moveZeroes(nums) {
     return nums;
 }
 let nums = [0, 1, 0,0,0, 3, 12];
-console.log(moveZeroes(nums)); // Output: [1, 3, 12, 0, 0]*/
+console.log(moveZeroes(nums)); // Output: [1, 3, 12, 0, 0]
 
 function checkword(word) {
     const allUppercase = word === word.toUpperCase();
