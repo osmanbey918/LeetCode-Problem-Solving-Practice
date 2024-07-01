@@ -62,7 +62,7 @@ var addTwoNumbers = function(l1, l2) {
 };
 console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]))*/
 
-
+/*
 
 var findCenter = function (arr) {
     let ans = 0
@@ -88,4 +88,26 @@ var findCenter = function (arr) {
     }
     return ans
 }
-console.log(findCenter([[1, 2], [2, 3], [4, 2]]))
+console.log(findCenter([[1, 2], [2, 3], [4, 2]]))*/
+
+
+
+
+
+var maxSubArray = function (nums) {
+    if(nums.length == 1) return nums[0]
+    let max = 0
+    for (let start = 0; start < nums.length; start++) {
+        let result = [];
+        for (let end = start + 1; end <= nums.length; end++) {
+            result.push(nums.slice(start, end));
+            const sum = result.reduce((total, num) => total + num, 0);
+            max = Math.max(sum, max)
+        }
+    }
+    return max;
+};
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+console.log(maxSubArray([5, 4, -1, 7, 8]))
+console.log(maxSubArray([-1]))
+console.log(maxSubArray([-1, -2]))
