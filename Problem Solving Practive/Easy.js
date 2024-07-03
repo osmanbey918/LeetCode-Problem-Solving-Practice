@@ -1,5 +1,5 @@
 
-
+/*
 function zero(num) {
     let c = 0
     for (let i = 0; i < num.length; i++) {
@@ -39,4 +39,19 @@ function checkword(word) {
 
     return allUppercase || allLowercase || firstLetterUppercase;
 };
-console.log(checkword('GOGLDJ'));
+console.log(checkword('GOGLDJ'));*/
+
+var timeRequiredToBuy = function(tickets, k) {
+    let total = 0;
+
+   for (let i = 0; i < tickets.length; i++) {
+       if (i <= k) {
+           total += Math.min(tickets[i], tickets[k]);
+       } else {
+           total += Math.min(tickets[i], tickets[k] - 1);
+       }
+   }
+
+   return total;
+};
+console.assertlog(timeRequiredToBuy([2,3,2], 2))
