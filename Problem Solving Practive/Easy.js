@@ -40,7 +40,7 @@ function checkword(word) {
     return allUppercase || allLowercase || firstLetterUppercase;
 };
 console.log(checkword('GOGLDJ'));*/
-
+/*
 var timeRequiredToBuy = function(tickets, k) {
     let total = 0;
 
@@ -54,4 +54,13 @@ var timeRequiredToBuy = function(tickets, k) {
 
    return total;
 };
-console.assertlog(timeRequiredToBuy([2,3,2], 2))
+console.assertlog(timeRequiredToBuy([2,3,2], 2))*/
+
+var singleNumber = function (nums) {
+    let single = 0;
+    for (let num of nums) {
+        single ^= num;
+    }
+    return single;
+};
+console.log(singleNumber([2,3,4,5,5,4,3]))
