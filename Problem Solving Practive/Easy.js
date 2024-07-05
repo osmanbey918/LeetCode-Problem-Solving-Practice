@@ -55,7 +55,7 @@ var timeRequiredToBuy = function(tickets, k) {
    return total;
 };
 console.assertlog(timeRequiredToBuy([2,3,2], 2))*/
-
+/*
 var singleNumber = function (nums) {
     let single = 0;
     for (let num of nums) {
@@ -63,4 +63,15 @@ var singleNumber = function (nums) {
     }
     return single;
 };
-console.log(singleNumber([2,3,4,5,5,4,3]))
+console.log(singleNumber([2,3,4,5,5,4,3]))*/
+
+
+var intersection = function (nums1, nums2) {
+    let arr = [...new Set(nums1)];
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (nums2.includes(arr[i])) res.push(arr[i]);
+    }
+    return res;
+};
+console.log(intersection([1, 2, 2, 1], [2, 2]))

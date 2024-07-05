@@ -1,6 +1,6 @@
 //      02/07/2024
 
-
+/*
 var intersect = function(nums1, nums2) {
     let arr = []
     for (let i = 0; i < nums1.length; i++) {
@@ -16,4 +16,4 @@ var intersect = function(nums1, nums2) {
     }
     return arr
 };
-console.log(intersect([4,9,5], [9,4,9,8,4]))
+console.log(intersect([4,9,5], [9,4,9,8,4]))*/
