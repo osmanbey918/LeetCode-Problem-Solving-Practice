@@ -65,7 +65,7 @@ var singleNumber = function (nums) {
 };
 console.log(singleNumber([2,3,4,5,5,4,3]))*/
 
-
+/*
 var intersection = function (nums1, nums2) {
     let arr = [...new Set(nums1)];
     let res = [];
@@ -74,4 +74,20 @@ var intersection = function (nums1, nums2) {
     }
     return res;
 };
-console.log(intersection([1, 2, 2, 1], [2, 2]))
+console.log(intersection([1, 2, 2, 1], [2, 2]))*/
+
+
+var transpose = function (matrix) {
+
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            matrix[i][j] = matrix[j][i];
+
+        }
+    }
+    return matrix;
+
+
+
+};
+console.log(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
