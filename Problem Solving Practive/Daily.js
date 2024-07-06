@@ -17,3 +17,29 @@ var intersect = function(nums1, nums2) {
     return arr
 };
 console.log(intersect([4,9,5], [9,4,9,8,4]))*/
+
+
+
+
+var passThePillow = function (n, time) {
+    let res = 1
+    let tar = time
+    while (time !== 0) {
+        time--
+        res++
+        if (res == n) {
+            while(time !== 0){
+                time--
+                res--
+                if(res == 0)
+            }
+        }
+    }
+    return res
+};
+console.log(passThePillow(4, 5));
+
+var passThePillow = function(n, time) {
+    let chunks = Math.floor(time / (n - 1));
+    return chunks % 2 === 0 ? (time % (n - 1) + 1) : (n - time % (n - 1));
+};

@@ -75,7 +75,7 @@ var intersection = function (nums1, nums2) {
     return res;
 };
 console.log(intersection([1, 2, 2, 1], [2, 2]))*/
-
+/*
 
 var transpose = function (matrix) {
 
@@ -90,4 +90,105 @@ var transpose = function (matrix) {
 
 
 };
-console.log(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+console.log(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))*/
+
+// function repeat(n, action) {
+//     for (let i = 0; i < n; i++) {
+//       action(i);
+//     }
+//   }
+
+//   repeat(5, console.log);
+// function greaterThan(n) {
+//     return m => m > n;
+// }
+// let greaterThan10 = greaterThan(10);
+// console.log(greaterThan10(10));
+
+// //===============
+// function unless(test, then) {
+//     if (!test) then();
+// }
+
+// repeat(7, n => {
+//     unless(n % 2 == 1, () => {
+//         console.log(n, "is even");
+//     });
+// });
+// ///////////////////////
+
+
+// const makeNoise = function() {
+//     console.log("Pling!");
+//   };
+  
+//   makeNoise();
+//   // → Pling!
+  
+//   const roundTo = function(n, step) {
+//     let remainder = n % step;
+//     return n - remainder + (remainder < step / 2 ? 0 : step);
+//   };
+  
+//   console.log(roundTo(23, 10));
+
+
+
+
+
+
+
+
+
+// const halve = function(n) {
+//     return n / 2;
+//   };
+  
+//   let n = 10;
+//   console.log(halve(100));
+//   // → 50
+//   console.log(n);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const hummus = function(factor) {
+//     const ingredient = function(amount, unit, name) {
+//       let ingredientAmount = amount * factor;
+//       if (ingredientAmount > 1) {
+//         unit += "s";
+//       }
+//       console.log(`${ingredientAmount} ${unit} ${name}`);
+//     };
+//     ingredient(1, "can", "chickpeas");
+//     ingredient(0.25, "cup", "tahini");
+//     ingredient(0.25, "cup", "lemon juice");
+//     ingredient(1, "clove", "garlic");
+//     ingredient(2, "tablespoon", "olive oil");
+//     ingredient(0.5, "teaspoon", "cumin");
+//   };
+
+
+
+
+
+
+
+const obj = {
+  log: ["example", "test"],
+  get latest() {
+    return this.log.at(-1);
+  },
+};
+console.log(obj.latest); // "test"
