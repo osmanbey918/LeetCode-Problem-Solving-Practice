@@ -39,7 +39,18 @@ var passThePillow = function (n, time) {
 };
 console.log(passThePillow(4, 5));
 
-var passThePillow = function(n, time) {
-    let chunks = Math.floor(time / (n - 1));
-    return chunks % 2 === 0 ? (time % (n - 1) + 1) : (n - time % (n - 1));
+// var passThePillow = function(n, time) {
+//     let chunks = Math.floor(time / (n - 1));
+//     return chunks % 2 === 0 ? (time % (n - 1) + 1) : (n - time % (n - 1));
+// };
+
+var numWaterBottles = function (numBottles, numExchange) {
+    let totalBottles = numBottles;
+
+    while (numBottles >= numExchange) {
+        totalBottles += Math.floor(numBottles / numExchange);
+        numBottles = Math.floor(numBottles / numExchange) + (numBottles % numExchange);
+    }
+
+    return totalBottles;
 };
