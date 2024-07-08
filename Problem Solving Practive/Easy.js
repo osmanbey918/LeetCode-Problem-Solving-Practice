@@ -184,11 +184,26 @@ console.log(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))*/
 
 
 
-
+/*
 const obj = {
   log: ["example", "test"],
   get latest() {
     return this.log.at(-1);
   },
 };
-console.log(obj.latest); // "test"
+console.log(obj.latest); // "test"*/
+
+
+
+var xorOperation = function(n, start) {
+    let arr = []
+    let i = 0
+    while(arr.length < n){
+        arr.push(start + 2 * i)
+        i++
+    }
+    let xor = 0
+    arr.forEach(num => xor ^= num);
+    return xor
+};
+console.log(xorOperation(4,3))
