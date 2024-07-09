@@ -93,7 +93,7 @@ console.log(findCenter([[1, 2], [2, 3], [4, 2]]))*/
 
 
 
-
+/*
 var maxSubArray = function (nums) {
     if(nums.length == 1) return nums[0]
     let max = 0
@@ -111,3 +111,21 @@ console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
 console.log(maxSubArray([5, 4, -1, 7, 8]))
 console.log(maxSubArray([-1]))
 console.log(maxSubArray([-1, -2]))
+*/
+
+
+var averageWaitingTime = function (customers) {
+    let aver = 0
+    let fc = customers[0][0]
+    for (let n of customers) {
+        if (fc < n[0]) {
+            fc = n[0] + n[1]
+            aver += fc - n[0]
+            continue
+        }
+        fc += n[1]
+        aver += fc - n[0]
+    }
+    return customers.length > 1? aver / customers.length : 0
+};
+console.log(averageWaitingTime([[]]));
