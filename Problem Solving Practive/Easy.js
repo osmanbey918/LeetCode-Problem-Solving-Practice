@@ -121,15 +121,15 @@ console.log(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))*/
 // const makeNoise = function() {
 //     console.log("Pling!");
 //   };
-  
+
 //   makeNoise();
 //   // → Pling!
-  
+
 //   const roundTo = function(n, step) {
 //     let remainder = n % step;
 //     return n - remainder + (remainder < step / 2 ? 0 : step);
 //   };
-  
+
 //   console.log(roundTo(23, 10));
 
 
@@ -143,7 +143,7 @@ console.log(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))*/
 // const halve = function(n) {
 //     return n / 2;
 //   };
-  
+
 //   let n = 10;
 //   console.log(halve(100));
 //   // → 50
@@ -195,15 +195,39 @@ console.log(obj.latest); // "test"*/
 
 
 
-var xorOperation = function(n, start) {
-    let arr = []
-    let i = 0
-    while(arr.length < n){
-        arr.push(start + 2 * i)
-        i++
+// var xorOperation = function(n, start) {
+//     let arr = []
+//     let i = 0
+//     while(arr.length < n){
+//         arr.push(start + 2 * i)
+//         i++
+//     }
+//     let xor = 0
+//     arr.forEach(num => xor ^= num);
+//     return xor
+// };
+// console.log(xorOperation(4,3))
+
+
+
+
+var checkPerfectNumber = function (num) {
+    if (num <= 1) {
+        return false; 
     }
-    let xor = 0
-    arr.forEach(num => xor ^= num);
-    return xor
+
+    let sum = 1; 
+    let sqrtN = Math.sqrt(num);
+
+    for (let i = 2; i <= sqrtN; i++) {
+        if (num % i === 0) {
+            sum += i;
+            if (i !== num / i) {
+                sum += num / i;
+            }
+        }
+    }
+
+    return sum === num;
 };
-console.log(xorOperation(4,3))
+console.log(checkPerfectNumber(28));

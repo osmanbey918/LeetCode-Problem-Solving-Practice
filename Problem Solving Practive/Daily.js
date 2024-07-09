@@ -19,7 +19,7 @@ var intersect = function(nums1, nums2) {
 console.log(intersect([4,9,5], [9,4,9,8,4]))*/
 
 
-
+/*
 
 var passThePillow = function (n, time) {
     let res = 1
@@ -53,4 +53,15 @@ var numWaterBottles = function (numBottles, numExchange) {
     }
 
     return totalBottles;
+};*/
+
+
+var checkPerfectNumber = function(num) {
+    let arr = []
+    let o = 0
+    while (0 < num){
+        o++
+    }
+    return o
 };
+console.log(checkPerfectNumber(28));
