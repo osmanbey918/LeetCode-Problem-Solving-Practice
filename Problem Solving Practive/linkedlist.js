@@ -52,4 +52,5 @@ myList.append(10);
 myList.append(20);
 myList.append(30);
 
-myList.print(); // Output: 10 -> 20 -> 30 -> null
+//myList.print(); // Output: 10 -> 20 -> 30 -> null
+console.log(myList.print())

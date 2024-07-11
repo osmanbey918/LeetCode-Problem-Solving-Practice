@@ -211,23 +211,89 @@ console.log(obj.latest); // "test"*/
 
 
 
-var checkPerfectNumber = function (num) {
-    if (num <= 1) {
-        return false; 
-    }
+// var checkPerfectNumber = function (num) {
+//     if (num <= 1) {
+//         return false; 
+//     }
 
-    let sum = 1; 
-    let sqrtN = Math.sqrt(num);
+//     let sum = 1; 
+//     let sqrtN = Math.sqrt(num);
 
-    for (let i = 2; i <= sqrtN; i++) {
-        if (num % i === 0) {
-            sum += i;
-            if (i !== num / i) {
-                sum += num / i;
+//     for (let i = 2; i <= sqrtN; i++) {
+//         if (num % i === 0) {
+//             sum += i;
+//             if (i !== num / i) {
+//                 sum += num / i;
+//             }
+//         }
+//     }
+
+//     return sum === num;
+// };
+// console.log(checkPerfectNumber(28));
+var wordPattern = function (pattern, s) {
+    let ss = s.split(' ');
+    if (ss.length !== pattern.length) return false;
+
+    let charToWord = {};  // Changed variable name for clarity
+
+    for (let i = 0; i < pattern.length; i++) {
+        if (charToWord.hasOwnProperty(pattern[i])) {
+            if (charToWord[pattern[i]] !== ss[i]) {
+                return false;  // If pattern mismatch
             }
+        } else {
+            // Check if the word has already been mapped to another character
+            for (let key in charToWord) {
+                if (charToWord[key] === ss[i]) {
+                    return false;
+                }
+            }
+
+            charToWord[pattern[i]] = ss[i];  // Mapping character to word
         }
     }
 
-    return sum === num;
+    return true;
 };
-console.log(checkPerfectNumber(28));
+
+console.log(wordPattern("abba", "dog cat cat dog"));  // Output: true
+console.log(wordPattern("abba", "dog cat cat fish")); // Output: false
+
+
+var wordPattern = function(pattern, s) {
+    const words = s.split(' ');
+    
+    if (pattern.length !== words.length) {
+        return false;
+    }
+    
+    const patternToWord = {};
+    const wordToPattern = {};
+    
+    for (let i = 0; i < pattern.length; i++) {
+        const char = pattern[i];
+        const word = words[i];
+        
+        if (!patternToWord[char]) {
+            patternToWord[char] = word;
+        } else {
+            if (patternToWord[char] !== word) {
+                return false; // Conflict found in pattern to word mapping
+            }
+        }
+        
+        if (!wordToPattern[word]) {
+            wordToPattern[word] = char;
+        } else {
+            if (wordToPattern[word] !== char) {
+                return false; // Conflict found in word to pattern mapping
+            }
+        }
+    }
+    
+    return true; // No conflicts found
+};
+
+console.log(wordPattern("abba", "dog cat cat dog")); // Output: true
+console.log(wordPattern("abba", "dog cat cat fish")); // Output: false
