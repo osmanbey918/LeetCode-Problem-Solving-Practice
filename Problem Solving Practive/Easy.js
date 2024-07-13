@@ -231,69 +231,98 @@ console.log(obj.latest); // "test"*/
 //     return sum === num;
 // };
 // console.log(checkPerfectNumber(28));
-var wordPattern = function (pattern, s) {
-    let ss = s.split(' ');
-    if (ss.length !== pattern.length) return false;
-
-    let charToWord = {};  // Changed variable name for clarity
-
-    for (let i = 0; i < pattern.length; i++) {
-        if (charToWord.hasOwnProperty(pattern[i])) {
-            if (charToWord[pattern[i]] !== ss[i]) {
-                return false;  // If pattern mismatch
-            }
-        } else {
-            // Check if the word has already been mapped to another character
-            for (let key in charToWord) {
-                if (charToWord[key] === ss[i]) {
-                    return false;
-                }
-            }
-
-            charToWord[pattern[i]] = ss[i];  // Mapping character to word
-        }
-    }
-
-    return true;
-};
-
-console.log(wordPattern("abba", "dog cat cat dog"));  // Output: true
-console.log(wordPattern("abba", "dog cat cat fish")); // Output: false
 
 
-var wordPattern = function(pattern, s) {
-    const words = s.split(' ');
+
+
+
+
+
+
+// var wordPattern = function (pattern, s) {
+//     let ss = s.split(' ');
+//     if (ss.length !== pattern.length) return false;
+
+//     let charToWord = {};  // Changed variable name for clarity
+
+//     for (let i = 0; i < pattern.length; i++) {
+//         if (charToWord.hasOwnProperty(pattern[i])) {
+//             if (charToWord[pattern[i]] !== ss[i]) {
+//                 return false;  // If pattern mismatch
+//             }
+//         } else {
+//             // Check if the word has already been mapped to another character
+//             for (let key in charToWord) {
+//                 if (charToWord[key] === ss[i]) {
+//                     return false;
+//                 }
+//             }
+
+//             charToWord[pattern[i]] = ss[i];  // Mapping character to word
+//         }
+//     }
+
+//     return true;
+// };
+
+// console.log(wordPattern("abba", "dog cat cat dog"));  // Output: true
+// console.log(wordPattern("abba", "dog cat cat fish")); // Output: false
+
+
+// var wordPattern = function(pattern, s) {
+//     const words = s.split(' ');
     
-    if (pattern.length !== words.length) {
-        return false;
-    }
+//     if (pattern.length !== words.length) {
+//         return false;
+//     }
     
-    const patternToWord = {};
-    const wordToPattern = {};
+//     const patternToWord = {};
+//     const wordToPattern = {};
     
-    for (let i = 0; i < pattern.length; i++) {
-        const char = pattern[i];
-        const word = words[i];
+//     for (let i = 0; i < pattern.length; i++) {
+//         const char = pattern[i];
+//         const word = words[i];
         
-        if (!patternToWord[char]) {
-            patternToWord[char] = word;
-        } else {
-            if (patternToWord[char] !== word) {
-                return false; // Conflict found in pattern to word mapping
-            }
-        }
+//         if (!patternToWord[char]) {
+//             patternToWord[char] = word;
+//         } else {
+//             if (patternToWord[char] !== word) {
+//                 return false; // Conflict found in pattern to word mapping
+//             }
+//         }
         
-        if (!wordToPattern[word]) {
-            wordToPattern[word] = char;
-        } else {
-            if (wordToPattern[word] !== char) {
-                return false; // Conflict found in word to pattern mapping
-            }
-        }
-    }
+//         if (!wordToPattern[word]) {
+//             wordToPattern[word] = char;
+//         } else {
+//             if (wordToPattern[word] !== char) {
+//                 return false; // Conflict found in word to pattern mapping
+//             }
+//         }
+//     }
     
-    return true; // No conflicts found
-};
+//     return true; // No conflicts found
+// };
 
-console.log(wordPattern("abba", "dog cat cat dog")); // Output: true
-console.log(wordPattern("abba", "dog cat cat fish")); // Output: false
+// console.log(wordPattern("abba", "dog cat cat dog")); // Output: true
+// console.log(wordPattern("abba", "dog cat cat fish")); // Output: false
+
+
+
+
+
+
+
+
+
+
+
+
+
+var countDigits = function(num) {
+    let count= 0;
+    for(i=0;i<String(num).length;i++){
+       num%String(num)[i] == 0?count++:0
+    }
+    return count
+};
+console.log(countDigits(121));
