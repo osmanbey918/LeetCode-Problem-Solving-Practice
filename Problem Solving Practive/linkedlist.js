@@ -263,40 +263,139 @@
 
 
 
-// Define the Node class
-class Node {
-    constructor(data, next = null) {
-        this.data = data;
+// // Define the Node class
+// class Node {
+//     constructor(data, next = null) {
+//         this.data = data;
+//         this.next = next;
+//     }
+// }
+
+// // Define the LinkedList class
+// class LinkedList {
+//     constructor() {
+//         this.head = null;
+//     }
+
+//     // Insert node at the beginning of the linked list
+//     insertFirst(data) {
+//         this.head = new Node(data, this.head);
+//     }
+
+//     // Print all elements in the linked list
+//     printList() {
+//         let current = this.head;
+//         while (current !== null) {
+//             console.log(current.data);
+//             current = current.next;
+//         }
+//     }
+// }
+
+// // Usage example:
+// const ll = new LinkedList();
+
+// ll.insertFirst(10);
+// ll.insertFirst(20);
+// ll.insertFirst(30);
+
+// ll.printList();
+
+// https://leetcode.com/problems/merge-two-sorted-lists/submissions/1322992628/
+
+
+
+
+class node {
+    constructor(data, next = null){
+        this.data = data
         this.next = next;
     }
 }
 
-// Define the LinkedList class
-class LinkedList {
-    constructor() {
-        this.head = null;
+class linklist{
+    // constructor(){
+    //     this.head = null;
+    // }
+
+
+    addbegin(data){
+        let newnode = new node(data);
+        newnode.next = this.head
+        this.head = newnode
     }
 
-    // Insert node at the beginning of the linked list
-    insertFirst(data) {
-        this.head = new Node(data, this.head);
+    addLast(data){
+        let newnode = new node(data);
+        // If the list is empty, make the new node the head
+        if (this.head === null) {
+            this.head = newnode;
+            return;
+        }
+        let curr = this.head;
+        // Traverse to the end of the list
+        while (curr.next !== null) {
+            curr = curr.next;
+        }
+        // Add the new node at the end
+        curr.next = newnode;
     }
 
-    // Print all elements in the linked list
-    printList() {
-        let current = this.head;
-        while (current !== null) {
-            console.log(current.data);
-            current = current.next;
+
+
+
+
+
+
+
+    print(){
+        let curr = this.head
+        while(curr != null){
+            console.log(curr.data);
+            curr = curr.next
         }
     }
 }
+let list = new linklist()
+list.addbegin(9)
+list.addbegin(8)
+list.addbegin(7)
+list.print()
 
-// Usage example:
-const ll = new LinkedList();
 
-ll.insertFirst(10);
-ll.insertFirst(20);
-ll.insertFirst(30);
 
-ll.printList();
+
+
+
+// class node {
+//     constructor(data, next = null){
+//         this.data = data;
+//         this.next = next;
+//     }
+// }
+
+// class linklist {
+//     constructor(){
+//         this.head = null;
+//     }
+
+//     adding(data){
+//         let newnode = new node(data);
+//         newnode.next = this.head;
+//         this.head = newnode;
+//     }
+
+//     print(){
+//         let curr = this.head;
+//         while(curr != null){
+//             console.log(curr.data);
+//             curr = curr.next;
+//         }
+//     }
+// }
+
+// let list = new linklist();
+// list.adding(9);
+// list.adding(7);
+// list.adding(8);
+// list.print();
