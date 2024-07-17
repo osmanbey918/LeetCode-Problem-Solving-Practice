@@ -131,18 +131,35 @@ console.log(maxSubArray([-1, -2]))
 // console.log(averageWaitingTime([[]]));
 
 
-var sumOfSquares = function(nums) {
-   // nums.unshift(10);
-    let newarr = [0, ...nums];
-    let l = newarr.length;
-    let arr = []
-    let c = 0
-    for(let i = 1; i < l; i++){
-        if (l % i === 0) {
-            c++
+// var sumOfSquares = function(nums) {
+//    // nums.unshift(10);
+//     let newarr = [0, ...nums];
+//     let l = newarr.length;
+//     let arr = []
+//     let c = 0
+//     for(let i = 1; i < l; i++){
+//         if (l % i === 0) {
+//             c++
+//         }
+//         c++
+//     }
+//     return c
+// };
+// console.log(sumOfSquares([2,7,1,19,18,3]));
+
+
+var finalString = function(s) {
+    let res = ''
+    let r = ''
+    for(let ss of s){
+       // r = res
+        if(ss == 'i'){
+            r = res.split('').reverse().join('')
+            res = r
+            continue;
         }
-        c++
+        res += ss
     }
-    return c
+    return res
 };
-console.log(sumOfSquares([2,7,1,19,18,3]));
+console.log(finalString("string"));
