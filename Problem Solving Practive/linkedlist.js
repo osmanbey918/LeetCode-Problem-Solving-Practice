@@ -306,61 +306,61 @@
 
 
 
-class node {
-    constructor(data, next = null){
-        this.data = data
-        this.next = next;
-    }
-}
+// class node {
+//     constructor(data, next = null){
+//         this.data = data
+//         this.next = next;
+//     }
+// }
 
-class linklist{
-    // constructor(){
-    //     this.head = null;
-    // }
-
-
-    addbegin(data){
-        let newnode = new node(data);
-        newnode.next = this.head
-        this.head = newnode
-    }
-
-    addLast(data){
-        let newnode = new node(data);
-        // If the list is empty, make the new node the head
-        if (this.head === null) {
-            this.head = newnode;
-            return;
-        }
-        let curr = this.head;
-        // Traverse to the end of the list
-        while (curr.next !== null) {
-            curr = curr.next;
-        }
-        // Add the new node at the end
-        curr.next = newnode;
-    }
+// class linklist{
+//     constructor(){
+//         this.head = null;
+//     }
 
 
+//     addbegin(data){
+//         let newnode = new node(data);
+//         newnode.next = this.head
+//         this.head = newnode
+//     }
+
+//     addLast(data){
+//         let newnode = new node(data);
+//         // If the list is empty, make the new node the head
+//         if (this.head === null) {
+//             this.head = newnode;
+//             return;
+//         }
+//         let curr = this.head;
+//         // Traverse to the end of the list
+//         while (curr.next !== null) {
+//             curr = curr.next;
+//         }
+//         // Add the new node at the end
+//         curr.next = newnode;
+//     }
 
 
 
 
 
 
-    print(){
-        let curr = this.head
-        while(curr != null){
-            console.log(curr.data);
-            curr = curr.next
-        }
-    }
-}
-let list = new linklist()
-list.addbegin(9)
-list.addbegin(8)
-list.addbegin(7)
-list.print()
+
+
+//     print(){
+//         let curr = this.head
+//         while(curr != null){
+//             console.log(curr.data);
+//             curr = curr.next
+//         }
+//     }
+// }
+// let list = new linklist()
+// list.addbegin(9)
+// list.addbegin(8)
+// list.addbegin(7)
+// list.print()
 
 
 
@@ -399,3 +399,102 @@ list.print()
 // list.adding(7);
 // list.adding(8);
 // list.print();
+
+
+
+// class node {
+//     constructor(data, next = null){
+//         this.data = data
+//         this.next = next
+//     }
+// }
+
+// class list{
+//     constructor(){
+//         this.head = null
+//     }
+
+//     add(data){
+//         let newnode = new node(data)
+//         newnode.next = this.head
+//         this.head = newnode
+//     }
+//     print(){
+//         let curr = this.head
+//         while(curr){
+//             console.log(curr.data);
+//             curr = curr.next
+//         }
+//     }
+// }
+// let newlist = new list()
+// newlist.add(9)
+// newlist.add(3)
+// newlist.add(3)
+// newlist.add(6)
+// newlist.print()
+
+
+
+// class node {
+//     constructor(data, next = null) {
+//         this.data = data
+//         this.next = next
+//     }
+// }
+
+// class list {
+//     constructor(){
+//         this.head = null
+//     }
+//     add(data){
+//         let newnode = new node(data)
+//         newnode.next = this.head
+//         this.head = newnode
+//     }
+//     print(){
+//         let curr = this.head
+//         while(curr){
+//             console.log(curr.data);
+//             curr = curr.next
+
+//         }
+//     }
+// }
+// let listt = new list()
+// listt.add(3)
+// listt.add(4)
+// listt.add(5)
+// listt.add(9)
+// listt.print()
+
+
+class node {
+    constructor(data, next = null) {
+        this.data = data;
+        this.next = next;
+    }
+}
+class list {
+    constructor() {
+        this.head = null
+    }
+    add(data) {
+        let newnode = new node(data)
+        newnode.next = this.head
+        this.head = newnode
+    }
+    print() {
+        let curr = this.head
+        while (curr) {
+            console.log(curr.data);
+            curr = curr.next
+        }
+    }
+}
+let listt = new list()
+listt.add(3)
+listt.add(4)
+listt.add(5)
+listt.add(9)
+listt.print()
