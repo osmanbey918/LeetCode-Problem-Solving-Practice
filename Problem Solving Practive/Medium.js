@@ -114,18 +114,35 @@ console.log(maxSubArray([-1, -2]))
 */
 
 
-var averageWaitingTime = function (customers) {
-    let aver = 0
-    let fc = customers[0][0]
-    for (let n of customers) {
-        if (fc < n[0]) {
-            fc = n[0] + n[1]
-            aver += fc - n[0]
-            continue
+// var averageWaitingTime = function (customers) {
+//     let aver = 0
+//     let fc = customers[0][0]
+//     for (let n of customers) {
+//         if (fc < n[0]) {
+//             fc = n[0] + n[1]
+//             aver += fc - n[0]
+//             continue
+//         }
+//         fc += n[1]
+//         aver += fc - n[0]
+//     }
+//     return customers.length > 1? aver / customers.length : 0
+// };
+// console.log(averageWaitingTime([[]]));
+
+
+var sumOfSquares = function(nums) {
+   // nums.unshift(10);
+    let newarr = [0, ...nums];
+    let l = newarr.length;
+    let arr = []
+    let c = 0
+    for(let i = 1; i < l; i++){
+        if (l % i === 0) {
+            c++
         }
-        fc += n[1]
-        aver += fc - n[0]
+        c++
     }
-    return customers.length > 1? aver / customers.length : 0
+    return c
 };
-console.log(averageWaitingTime([[]]));
+console.log(sumOfSquares([2,7,1,19,18,3]));
