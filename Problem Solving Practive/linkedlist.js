@@ -469,32 +469,179 @@
 // listt.print()
 
 
-class node {
-    constructor(data, next = null) {
-        this.data = data;
-        this.next = next;
-    }
+// class node {
+//     constructor(data, next = null) {
+//         this.data = data;
+//         this.next = next;
+//     }
+// }
+// class list {
+//     constructor() {
+//         this.head = null
+//     }
+//     add(data) {
+//         let newnode = new node(data)
+//         newnode.next = this.head
+//         this.head = newnode
+//     }
+//     print() {
+//         let curr = this.head
+//         while (curr) {
+//             console.log(curr.data);
+//             curr = curr.next
+//         }
+//     }
+// }
+// let listt = new list()
+// listt.add(3)
+// listt.add(4)
+// listt.add(5)
+// listt.add(9)
+// listt.print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class ListNode {
+//     constructor(val, next = null) {
+//         this.val = (val === undefined ? 0 : val)
+//         this.next = (next === undefined ? null : next)
+//     }
+
+// }
+
+// var removeElements = function (head, val) {
+//     let curr = head
+//     while (curr) {
+//         console.log(curr.val)
+//         curr = curr.next
+//     }
+// };
+
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+
+
+
+
+// var getDecimalValue = function(head) {
+//     let s = ''
+//     while(head){
+//         s += head.val
+//         head = head.next
+//     }
+//     return parseInt(s, 2)
+// };
+
+
+
+// class node {
+//     constructor(data, next = null) {
+//         this.data = data;
+//         this.next = next;
+//     }
+// }
+
+// class list {
+//     constructor() {
+//         this.head = null;
+//     }
+//     add(data) {
+//         let newnode = new node(data);
+//         newnode.next = this.head;
+//         this.head = newnode;
+//     }
+//     print() {
+//         let curr = this.head;
+//         while (curr) {
+//             console.log(curr.data);
+//             curr = curr.next;
+//         }
+//     }
+//     delete(data) {
+//         if (this.head === null) return
+
+//         // Case 1: If the node to be deleted is the head node
+//         if (this.head.data === data) {
+//             this.head = this.head.next; // Move head to next node
+//             return;
+//         }
+
+
+//         let curr = this.head;
+//         while (curr !== null) {
+//             if (curr.next.data == data) {
+//                 curr.next = curr.next.next;
+//                 return;
+//             }
+//             curr = curr.next;
+//         }
+//     }
+// }
+// let newlist = new list()
+// newlist.add(9)
+// newlist.add(4)
+// newlist.add(6)
+// newlist.delete(6)
+// newlist.delete(4)
+// newlist.add(4)
+// newlist.add(4)
+// newlist.print()
+
+
+
+
+// Define a Node class
+function Node(data, next = null) {
+    this.data = data;
+    this.next = next;
 }
-class list {
-    constructor() {
-        this.head = null
-    }
-    add(data) {
-        let newnode = new node(data)
-        newnode.next = this.head
-        this.head = newnode
-    }
-    print() {
-        let curr = this.head
+
+
+function LinkedList() {
+    this.head = null;
+
+    this.add = function(data) {
+        let newNode = new Node(data);
+        newNode.next = this.head;
+        this.head = newNode;
+    };
+
+
+    this.print = function() {
+        let curr = this.head;
         while (curr) {
             console.log(curr.data);
-            curr = curr.next
+            curr = curr.next;
         }
-    }
+    };
+
 }
-let listt = new list()
-listt.add(3)
-listt.add(4)
-listt.add(5)
-listt.add(9)
-listt.print()
+
+// Example usage:
+let newList = new LinkedList();
+newList.add(9);
+newList.add(4);
+newList.add(6);
+
+console.log("Before deletion:");
+newList.print(); // Output: 6, 4, 9
+
+newList.delete(6);
+console.log("After deletion of 6:");
+newList.print(); // Output: 4, 9
