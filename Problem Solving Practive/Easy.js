@@ -271,18 +271,18 @@ console.log(obj.latest); // "test"*/
 
 // var wordPattern = function(pattern, s) {
 //     const words = s.split(' ');
-    
+
 //     if (pattern.length !== words.length) {
 //         return false;
 //     }
-    
+
 //     const patternToWord = {};
 //     const wordToPattern = {};
-    
+
 //     for (let i = 0; i < pattern.length; i++) {
 //         const char = pattern[i];
 //         const word = words[i];
-        
+
 //         if (!patternToWord[char]) {
 //             patternToWord[char] = word;
 //         } else {
@@ -290,7 +290,7 @@ console.log(obj.latest); // "test"*/
 //                 return false; // Conflict found in pattern to word mapping
 //             }
 //         }
-        
+
 //         if (!wordToPattern[word]) {
 //             wordToPattern[word] = char;
 //         } else {
@@ -299,7 +299,7 @@ console.log(obj.latest); // "test"*/
 //             }
 //         }
 //     }
-    
+
 //     return true; // No conflicts found
 // };
 
@@ -318,11 +318,58 @@ console.log(obj.latest); // "test"*/
 
 
 
-var countDigits = function(num) {
-    let count= 0;
-    for(i=0;i<String(num).length;i++){
-       num%String(num)[i] == 0?count++:0
+// var countDigits = function(num) {
+//     let count= 0;
+//     for(i=0;i<String(num).length;i++){
+//        num%String(num)[i] == 0?count++:0
+//     }
+//     return count
+// };
+// console.log(countDigits(121));
+
+
+
+
+// var reformat = function (s) {
+//     let news = s.split('').sort()
+//     for (let i = 0; i < news.length; i++) {
+//         if (typeof news[i] !== 'string') {
+//             let chararr = news.slice(i)
+//              return chararr
+//         }
+//         break;
+//     }
+// };
+// console.log(reformat("a0b1c2"))
+
+
+
+// var kLengthApart = function (nums, k) {
+//     let c = 0
+//     for (let i = 0; i < nums.length; i++) {
+//         if (i !== 0) {
+//             if (nums[i] == 1 && c < k) {
+//                 return false;
+//             }
+//         }
+//         if (nums[i] == 0) {
+//             c++
+//         } else c = 0
+//     }
+//     return true
+// };
+// //console.log(kLengthApart([1, 0, 0, 0, 1, 0, 0, 1], 2));
+// console.log(kLengthApart([0,1, 0,0,1,0,0,1], 2));
+
+
+
+
+var sortPeople = function (names, heights) {
+    let ob = {}
+    for (let i = 0; i < names.length; i++) {
+        ob[names[i]] = heights[i]
+        
     }
-    return count
+    console.log(ob);
 };
-console.log(countDigits(121));
+sortPeople(["Mary", "John", "Emma"], [180, 165, 170])
