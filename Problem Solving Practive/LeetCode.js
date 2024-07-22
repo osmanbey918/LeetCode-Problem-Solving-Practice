@@ -419,31 +419,31 @@ let cl = 0
 let ol = 0
 for (let i = 0; i < text.length; i++) {
 switch (text[i]) {
- case 'b':
-     b++;
-     break;
- case 'a':
-     a++;
-     break;
- case 'n':
-     n++;
-     break;
- case 'l':
-     cl++;
-     if (cl == 2) {
-         l++;
-         cl = 0
-     }
-     break;
- case 'o':
-     ol++;
-     if (ol == 2) {
-         o++;
-         ol = 0
-     }
-     break;
- default:
-     break;
+case 'b':
+    b++;
+    break;
+case 'a':
+    a++;
+    break;
+case 'n':
+    n++;
+    break;
+case 'l':
+    cl++;
+    if (cl == 2) {
+        l++;
+        cl = 0
+    }
+    break;
+case 'o':
+    ol++;
+    if (ol == 2) {
+        o++;
+        ol = 0
+    }
+    break;
+default:
+    break;
 }
 }
 
@@ -508,16 +508,44 @@ console.log(plusOne([1, 2, 9]))*/
 
 
 
-var arrayPairSum = function (nums) {
-    nums.sort((a, b) => a - b)
-    let i = 0;
+// var arrayPairSum = function (nums) {
+//     nums.sort((a, b) => a - b)
+//     let i = 0;
 
-    let max = 0
-    while (i < nums.length) {
-        max += Math.min(nums[i], nums[i + 1])
-        i++
-        i++
+//     let max = 0
+//     while (i < nums.length) {
+//         max += Math.min(nums[i], nums[i + 1])
+//         i++
+//         i++
+//     }
+//     return max
+// };
+// console.log(arrayPairSum([1, 4, 3, 2]))
+
+
+// var sortPeople = function (names, heights) {
+//     let obj = {}
+//     for (let i = 0; i < names.length; i++) {
+//         obj[heights[i]] = names[i]
+//     }
+//    // let array = Object.values(obj).reverse()
+//   //  array.reverse()
+//     return Object.values(obj).reverse()
+// };
+// console.log(sortPeople(["Mary", "John", "Emma"], [180, 165, 170]));
+
+
+
+var maxSubArray = function (nums) {
+   // nums.sort((a,b) => a - b)
+   let arr = []
+   let res = 0
+    for (const n of nums) {
+        if(n > 0){
+            arr.push(n)
+            res += n
+        }
     }
-    return max
-};
-console.log(arrayPairSum([1, 4, 3, 2]))
+    return res
+}
+console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
