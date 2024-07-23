@@ -683,3 +683,135 @@ while (nextSum !== null) {
 }
 return head.next; // Skip the initial 0 node
 };
+
+
+
+
+
+
+
+
+
+
+
+
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const randomNumber = Math.random();
+      if (randomNumber > 0.5) {
+        resolve(randomNumber);
+      } else {
+        reject(new Error('Random number is too low'));
+      }
+    }, 1000);
+  });
+  
+  myPromise.then((result) => {
+    console.log(result);
+  }).catch((error) => {
+    console.error(error);
+  });
+  
+
+  function fetchDataFromServer() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const data = {
+          name: 'John Doe',
+          age: 30,
+          city: 'New York'
+        };
+        resolve(data);
+      }, 2000);
+    });
+  }
+  
+  fetchDataFromServer()
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  
+
+
+
+    
+  
+    const myPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const randomNumber = Math.random();
+          if (randomNumber > 0.5) {
+            resolve(randomNumber);
+          } else {
+            reject(new Error('Random number is too low'));
+          }
+        }, 1000);
+      });
+      
+      myPromise.then((result) => {
+        console.log(result);
+      }).catch((error) => {
+        console.error(error);
+      });
+
+
+
+
+
+
+
+
+
+
+      // Simulated function to fetch data from an API
+function fetchDataFromAPI() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const data = { 
+          id: 1,
+          title: 'Sample Post',
+          body: 'This is a sample post fetched from the API.'
+        };
+        resolve(data);
+      }, 1500); // Simulating a delay of 1.5 seconds
+    });
+  }
+  
+  // Async function to fetch and process data
+  async function fetchAndProcessData() {
+    try {
+      // Fetch data from the API
+      const data = await fetchDataFromAPI();
+      
+      // Simulated processing of data (here, just logging it)
+      console.log('Data fetched successfully:');
+      console.log('ID:', data.id);
+      console.log('Title:', data.title);
+      console.log('Body:', data.body);
+      
+      // Simulated additional processing or actions
+      console.log('Additional processing...');
+      await simulateAsyncTask(); // Simulated async task
+      
+      console.log('Data processing complete.');
+    } catch (error) {
+      console.error('Error fetching or processing data:', error);
+    }
+  }
+  
+  // Simulated async task
+  function simulateAsyncTask() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log('Simulated async task complete.');
+        resolve();
+      }, 1000); // Simulating a delay of 1 second
+    });
+  }
+  
+  // Call the async function to start execution
+  fetchAndProcessData();
+  
+      

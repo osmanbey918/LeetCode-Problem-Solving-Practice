@@ -549,3 +549,19 @@ var maxSubArray = function (nums) {
     return res
 }
 console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
+
+var findMaxAverage = function(nums, k) {
+    let avg = 0;
+    let i;
+    for(i=0; i<k; i++) {
+        avg += nums[i];
+    }
+    let maks = avg/k;
+    // console.log(max);
+    for(let x=i; x<nums.length; x++) {
+        avg+=nums[x];
+        avg-=nums[x-i];
+        maks = Math.max(maks, avg/k);
+    }
+    return maks;
+};

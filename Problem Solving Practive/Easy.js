@@ -368,7 +368,6 @@ var sortPeople = function (names, heights) {
     let ob = {}
     for (let i = 0; i < names.length; i++) {
         ob[names[i]] = heights[i]
-        
     }
     console.log(ob);
 };
