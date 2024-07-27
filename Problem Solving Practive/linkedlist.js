@@ -606,49 +606,274 @@
 
 
 
-// Define a Node class
-function Node(data, next = null) {
-    this.data = data;
+// // Define a Node class
+// function Node(data, next = null) {
+//     this.data = data;
+//     this.next = next;
+// }
+
+
+// function LinkedList() {
+//     this.head = null;
+
+//     this.add = function(data) {
+//         let newNode = new Node(data);
+//         newNode.next = this.head;
+//         this.head = newNode;
+//     };
+
+
+//     this.print = function() {
+//         let curr = this.head;
+//         while (curr) {
+//             console.log(curr.data);
+//             curr = curr.next;
+//         }
+//     };
+
+// }
+
+// // Example usage:
+// let newList = new LinkedList();
+// newList.add(9);
+// newList.add(4);
+// newList.add(6);
+
+// console.log("Before deletion:");
+// newList.print(); // Output: 6, 4, 9
+
+// newList.delete(6);
+// console.log("After deletion of 6:");
+// newList.print(); // Output: 4, 9
+
+
+
+
+
+// /**
+//  * Definition for singly-linked list.
+//  * function ListNode(val, next) {
+//  *     this.val = (val===undefined ? 0 : val)
+//  *     this.next = (next===undefined ? null : next)
+//  * }
+//  */
+// /**
+//  * @param {ListNode} head
+//  * @return {ListNode}
+//  */
+// var mergeNodes = function(head) {
+//     let modify = head.next; // Start from the node after the initial 0
+// let nextSum = modify;
+
+// while (nextSum !== null) {
+//     let sum = 0;
+//     // Find the sum of all nodes until you encounter a 0.
+//     while (nextSum.val !== 0) {
+//         sum += nextSum.val;
+//         nextSum = nextSum.next;
+//     }
+
+//     // Assign the sum to the current node's value.
+//     modify.val = sum;
+//     // Move nextSum to the first non-zero value of the next block.
+//     nextSum = nextSum.next;
+//     // Move modify also to this node.
+//     modify.next = nextSum;
+//     modify = modify.next;
+// }
+// return head.next; // Skip the initial 0 node
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+// const myPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const randomNumber = Math.random();
+//       if (randomNumber > 0.5) {
+//         resolve(randomNumber);
+//       } else {
+//         reject(new Error('Random number is too low'));
+//       }
+//     }, 1000);
+//   });
+
+//   myPromise.then((result) => {
+//     console.log(result);
+//   }).catch((error) => {
+//     console.error(error);
+//   });
+
+
+//   function fetchDataFromServer() {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         const data = {
+//           name: 'John Doe',
+//           age: 30,
+//           city: 'New York'
+//         };
+//         resolve(data);
+//       }, 2000);
+//     });
+//   }
+
+//   fetchDataFromServer()
+//     .then((data) => {
+//       console.log(data);
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       // Simulated function to fetch data from an API
+// function fetchDataFromAPI() {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         const data = { 
+//           id: 1,
+//           title: 'Sample Post',
+//           body: 'This is a sample post fetched from the API.'
+//         };
+//         resolve(data);
+//       }, 1500); // Simulating a delay of 1.5 seconds
+//     });
+//   }
+
+//   // Async function to fetch and process data
+//   async function fetchAndProcessData() {
+//     try {
+//       // Fetch data from the API
+//       const data = await fetchDataFromAPI();
+
+//       // Simulated processing of data (here, just logging it)
+//       console.log('Data fetched successfully:');
+//       console.log('ID:', data.id);
+//       console.log('Title:', data.title);
+//       console.log('Body:', data.body);
+
+//       // Simulated additional processing or actions
+//       console.log('Additional processing...');
+//       await simulateAsyncTask(); // Simulated async task
+
+//       console.log('Data processing complete.');
+//     } catch (error) {
+//       console.error('Error fetching or processing data:', error);
+//     }
+//   }
+
+//   // Simulated async task
+//   function simulateAsyncTask() {
+//     return new Promise((resolve) => {
+//       setTimeout(() => {
+//         console.log('Simulated async task complete.');
+//         resolve();
+//       }, 1000); // Simulating a delay of 1 second
+//     });
+//   }
+
+//   // Call the async function to start execution
+//   fetchAndProcessData();
+
+
+
+
+
+
+
+
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const randomNumber = Math.random();
+//     if (randomNumber > 0.5) {
+//       resolve(randomNumber);
+//     } else {
+//       reject(new Error('Random number is too low'));
+//     }
+//   }, 1000);
+// });
+
+// myPromise.then((result) => {
+//   console.log(result);
+// }).catch((error) => {
+//   console.error(error);
+// });
+
+// let promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     let age = 2
+//     if (age > 18) {
+//       resolve('he is eligible for cnic')
+//     } else { reject('eligible') }
+//   })
+// }, 1000)
+// promise.then((res) => {
+//   console.log(res);
+// })
+//   .catch((err) => {
+//     console.log(err);
+//   })
+
+class node{
+  constructor(val,next = null){
+    this.val = val;
     this.next = next;
+  }
+}
+class list{
+  constructor(){
+    this.head = null
+  }
+  add(val){
+    let newnode = new node(val);
+    newnode.next = this.head;
+    this.head = newnode
+  }
+  print(){
+    let curr = this.head;
+    while(curr){
+      console.log(curr.val);
+      curr = curr.next  
+    }
+  }
+  lastadd(val){
+    let newnode = new node(val);
+    let curr = this.head;
+    while(curr){
+      //console.log(curr.val);
+      curr = curr.next  
+    }
+    curr.next = newnode
+  }
 }
 
-
-function LinkedList() {
-    this.head = null;
-
-    this.add = function(data) {
-        let newNode = new Node(data);
-        newNode.next = this.head;
-        this.head = newNode;
-    };
-
-
-    this.print = function() {
-        let curr = this.head;
-        while (curr) {
-            console.log(curr.data);
-            curr = curr.next;
-        }
-    };
-
-}
-
-// Example usage:
-let newList = new LinkedList();
-newList.add(9);
-newList.add(4);
-newList.add(6);
-
-console.log("Before deletion:");
-newList.print(); // Output: 6, 4, 9
-
-newList.delete(6);
-console.log("After deletion of 6:");
-newList.print(); // Output: 4, 9
-
-
-
-
+let neli = new list()
+neli.lastadd(9)
+neli.add(5)
+neli.add(2)
+neli.add(4)
+neli.print()
 
 /**
  * Definition for singly-linked list.
@@ -661,157 +886,18 @@ newList.print(); // Output: 4, 9
  * @param {ListNode} head
  * @return {ListNode}
  */
-var mergeNodes = function(head) {
-    let modify = head.next; // Start from the node after the initial 0
-let nextSum = modify;
+var deleteDuplicates = function (head) {
+  let curr = head;
 
-while (nextSum !== null) {
-    let sum = 0;
-    // Find the sum of all nodes until you encounter a 0.
-    while (nextSum.val !== 0) {
-        sum += nextSum.val;
-        nextSum = nextSum.next;
-    }
-
-    // Assign the sum to the current node's value.
-    modify.val = sum;
-    // Move nextSum to the first non-zero value of the next block.
-    nextSum = nextSum.next;
-    // Move modify also to this node.
-    modify.next = nextSum;
-    modify = modify.next;
-}
-return head.next; // Skip the initial 0 node
-};
-
-
-
-
-
-
-
-
-
-
-
-
-const myPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const randomNumber = Math.random();
-      if (randomNumber > 0.5) {
-        resolve(randomNumber);
+  while (curr && curr.next) {
+      if (curr.val === curr.next.val) {
+          // Skip duplicate nodes
+          curr.next = curr.next.next;
       } else {
-        reject(new Error('Random number is too low'));
+          // Move to the next node
+          curr = curr.next;
       }
-    }, 1000);
-  });
-  
-  myPromise.then((result) => {
-    console.log(result);
-  }).catch((error) => {
-    console.error(error);
-  });
-  
-
-  function fetchDataFromServer() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const data = {
-          name: 'John Doe',
-          age: 30,
-          city: 'New York'
-        };
-        resolve(data);
-      }, 2000);
-    });
   }
-  
-  fetchDataFromServer()
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  
 
-
-
-    
-  
-    const myPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          const randomNumber = Math.random();
-          if (randomNumber > 0.5) {
-            resolve(randomNumber);
-          } else {
-            reject(new Error('Random number is too low'));
-          }
-        }, 1000);
-      });
-      
-      myPromise.then((result) => {
-        console.log(result);
-      }).catch((error) => {
-        console.error(error);
-      });
-
-
-
-
-
-
-
-
-
-
-      // Simulated function to fetch data from an API
-function fetchDataFromAPI() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const data = { 
-          id: 1,
-          title: 'Sample Post',
-          body: 'This is a sample post fetched from the API.'
-        };
-        resolve(data);
-      }, 1500); // Simulating a delay of 1.5 seconds
-    });
-  }
-  
-  // Async function to fetch and process data
-  async function fetchAndProcessData() {
-    try {
-      // Fetch data from the API
-      const data = await fetchDataFromAPI();
-      
-      // Simulated processing of data (here, just logging it)
-      console.log('Data fetched successfully:');
-      console.log('ID:', data.id);
-      console.log('Title:', data.title);
-      console.log('Body:', data.body);
-      
-      // Simulated additional processing or actions
-      console.log('Additional processing...');
-      await simulateAsyncTask(); // Simulated async task
-      
-      console.log('Data processing complete.');
-    } catch (error) {
-      console.error('Error fetching or processing data:', error);
-    }
-  }
-  
-  // Simulated async task
-  function simulateAsyncTask() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log('Simulated async task complete.');
-        resolve();
-      }, 1000); // Simulating a delay of 1 second
-    });
-  }
-  
-  // Call the async function to start execution
-  fetchAndProcessData();
-  
-      
+  return head;
+};
