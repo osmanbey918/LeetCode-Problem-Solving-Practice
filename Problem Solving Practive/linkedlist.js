@@ -835,69 +835,66 @@
 //     console.log(err);
 //   })
 
-class node{
-  constructor(val,next = null){
-    this.val = val;
-    this.next = next;
-  }
-}
-class list{
-  constructor(){
-    this.head = null
-  }
-  add(val){
-    let newnode = new node(val);
-    newnode.next = this.head;
-    this.head = newnode
-  }
-  print(){
-    let curr = this.head;
-    while(curr){
-      console.log(curr.val);
-      curr = curr.next  
-    }
-  }
-  lastadd(val){
-    let newnode = new node(val);
-    let curr = this.head;
-    while(curr){
-      //console.log(curr.val);
-      curr = curr.next  
-    }
-    curr.next = newnode
-  }
-}
+// class node{
+//   constructor(val,next = null){
+//     this.val = val;
+//     this.next = next;
+//   }
+// }
+// class list{
+//   constructor(){
+//     this.head = null
+//   }
+//   add(val){
+//     let newnode = new node(val);
+//     newnode.next = this.head;
+//     this.head = newnode
+//   }
+//   print(){
+//     let curr = this.head;
+//     while(curr){
+//       console.log(curr.val);
+//       curr = curr.next  
+//     }
+//   }
+//   lastadd(val){
+//     let newnode = new node(val);
+//     let curr = this.head;
+//     while(curr){
+//       //console.log(curr.val);
+//       curr = curr.next  
+//     }
+//     curr.next = newnode
+//   }
+// }
 
-let neli = new list()
-neli.lastadd(9)
-neli.add(5)
-neli.add(2)
-neli.add(4)
-neli.print()
+// let neli = new list()
+// neli.lastadd(9)
+// neli.add(5)
+// neli.add(2)
+// neli.add(4)
+// neli.print()
 
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var deleteDuplicates = function (head) {
-  let curr = head;
+// /**
+//  * Definition for singly-linked list.
+//  * function ListNode(val, next) {
+//  *     this.val = (val===undefined ? 0 : val)
+//  *     this.next = (next===undefined ? null : next)
+//  * }
+//  */
 
-  while (curr && curr.next) {
-      if (curr.val === curr.next.val) {
-          // Skip duplicate nodes
-          curr.next = curr.next.next;
-      } else {
-          // Move to the next node
-          curr = curr.next;
-      }
-  }
+// var deleteDuplicates = function (head) {
+//   let curr = head;
 
-  return head;
-};
+//   while (curr && curr.next) {
+//       if (curr.val === curr.next.val) {
+//           // Skip duplicate nodes
+//           curr.next = curr.next.next;
+//       } else {
+//           // Move to the next node
+//           curr = curr.next;
+//       }
+//   }
+
+//   return head;
+// };
