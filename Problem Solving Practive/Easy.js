@@ -364,11 +364,53 @@ console.log(obj.latest); // "test"*/
 
 
 
-var sortPeople = function (names, heights) {
-    let ob = {}
-    for (let i = 0; i < names.length; i++) {
-        ob[names[i]] = heights[i]
+// var sortPeople = function (names, heights) {
+//     let ob = {}
+//     for (let i = 0; i < names.length; i++) {
+//         ob[names[i]] = heights[i]
+//     }
+//     console.log(ob);
+// };
+// sortPeople(["Mary", "John", "Emma"], [180, 165, 170])
+
+let s1 = '1.10.00.20'
+let s2 = '1.2'
+let c1 = ''
+let c2 = ''
+let flag = false
+for (let i = 0; i < s1.length; i++) {
+    if (s1[i] == '.') {
+        flag = true
+        continue
     }
-    console.log(ob);
-};
-sortPeople(["Mary", "John", "Emma"], [180, 165, 170])
+    // flag = false
+    if (s1[i] == '0' && flag == true) {
+       // c1 += s1[i]
+        continue
+    }
+        c1 += s1[i]
+        flag = false
+}
+console.log(c1)
+for (let i = 0; i < s2.length; i++) {
+    if (s2[i] == '.') {
+        flag = true
+        continue
+    }
+    // flag = false
+    if (s2[i] == '0' && flag == true) {
+       // c2 += s2[i]
+        continue
+    }
+        c2 += s2[i]
+        flag = false
+}
+console.log(c2);
+
+if(c1 > c2) {
+    return 1
+}
+if(c1 < c2){
+    return -1
+}
+return 0
