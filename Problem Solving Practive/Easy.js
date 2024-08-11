@@ -373,49 +373,84 @@ console.log(obj.latest); // "test"*/
 // };
 // sortPeople(["Mary", "John", "Emma"], [180, 165, 170])
 
-let s1 = '1.10.00.20'
-let s2 = '1.2'
-let c1 = ''
-let c2 = ''
-let flag = false
-for (let i = 0; i < s1.length; i++) {
-    if (s1[i] == '.') {
-        flag = true
-        continue
-    }
-    // flag = false
-    if (s1[i] == '0' && flag == true) {
-       // c1 += s1[i]
-        continue
-    }
-        c1 += s1[i]
-        flag = false
-}
-console.log(c1)
-for (let i = 0; i < s2.length; i++) {
-    if (s2[i] == '.') {
-        flag = true
-        continue
-    }
-    // flag = false
-    if (s2[i] == '0' && flag == true) {
-       // c2 += s2[i]
-        continue
-    }
-        c2 += s2[i]
-        flag = false
-}
-console.log(c2);
+// let s1 = '1.10.00.20'
+// let s2 = '1.2'
+// let c1 = ''
+// let c2 = ''
+// let flag = false
+// for (let i = 0; i < s1.length; i++) {
+//     if (s1[i] == '.') {
+//         flag = true
+//         continue
+//     }
+//     // flag = false
+//     if (s1[i] == '0' && flag == true) {
+//        // c1 += s1[i]
+//         continue
+//     }
+//         c1 += s1[i]
+//         flag = false
+// }
+// console.log(c1)
+// for (let i = 0; i < s2.length; i++) {
+//     if (s2[i] == '.') {
+//         flag = true
+//         continue
+//     }
+//     // flag = false
+//     if (s2[i] == '0' && flag == true) {
+//        // c2 += s2[i]
+//         continue
+//     }
+//         c2 += s2[i]
+//         flag = false
+// }
+// console.log(c2);
 
-if(c1 > c2) {
-    return 1
-}
-if(c1 < c2){
-    return -1
-}
-return 0
+// if(c1 > c2) {
+//     return 1
+// }
+// if(c1 < c2){
+//     return -1
+// }
+// return 0
 
-var addDigits = function (num) {
-    if (num === 0) return 0;
-    return 1 + (num - 1) % 9;
+// var addDigits = function (num) {
+//     if (num === 0) return 0;
+//     return 1 + (num - 1) % 9;
+// };
+
+
+
+
+var buddyStrings = function (s, goal) {
+    if (s.length !== goal.length) {
+        return false
+    }
+
+    let arr = s.split('');
+    let stack = []
+    let c = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] != goal[i]) {
+            stack.push(i);
+            c++
+        }
+        if (c > 1) {
+            [arr[stack[0]], arr[stack[1]]] = [arr[stack[1]], arr[stack[0]]]
+            if(arr.join('') === goal){
+                return true
+            } else return false
+        }
+
+    }
+    console.log(arr);
+    
+    if (arr.join('') === goal && c > 1) {
+        return true
+    }
+    return false
+
 };
+
+console.log(buddyStrings("aa", "aa"));
