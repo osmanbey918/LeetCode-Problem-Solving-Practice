@@ -423,34 +423,34 @@ console.log(obj.latest); // "test"*/
 
 
 
-var buddyStrings = function (s, goal) {
-    if (s.length !== goal.length) {
-        return false
-    }
+// var buddyStrings = function (s, goal) {
+//     if (s.length !== goal.length) {
+//         return false
+//     }
 
-    let arr = s.split('');
-    let stack = []
-    let c = 0
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] != goal[i]) {
-            stack.push(i);
-            c++
-        }
-        if (c > 1) {
-            [arr[stack[0]], arr[stack[1]]] = [arr[stack[1]], arr[stack[0]]]
-            if(arr.join('') === goal){
-                return true
-            } else return false
-        }
+//     let arr = s.split('');
+//     let stack = []
+//     let c = 0
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] != goal[i]) {
+//             stack.push(i);
+//             c++
+//         }
+//         if (c > 1) {
+//             [arr[stack[0]], arr[stack[1]]] = [arr[stack[1]], arr[stack[0]]]
+//             if(arr.join('') === goal){
+//                 return true
+//             } else return false
+//         }
 
-    }
-    console.log(arr);
+//     }
+//     console.log(arr);
     
-    if (arr.join('') === goal && c > 1) {
-        return true
-    }
-    return false
+//     if (arr.join('') === goal && c > 1) {
+//         return true
+//     }
+//     return false
 
-};
+// };
 
-console.log(buddyStrings("aa", "aa"));
+// console.log(buddyStrings("aa", "aa"));
