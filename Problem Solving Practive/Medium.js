@@ -148,31 +148,31 @@ console.log(maxSubArray([-1, -2]))
 // console.log(sumOfSquares([2,7,1,19,18,3]));
 
 
-// var finalString = function(s) {
-//     let res = ''
-//     let r = ''
-//     for(let ss of s){
-//        // r = res
-//         if(ss == 'i'){
-//             r = res.split('').reverse().join('')
-//             res = r
-//             continue;
-//         }
-//         res += ss
-//     }
-//     return res
-// };
-// console.log(finalString("string"));
+var finalString = function(s) {
+    let res = ''
+    let r = ''
+    for(let ss of s){
+       // r = res
+        if(ss == 'i'){
+            r = res.split('').reverse().join('')
+            res = r
+            continue;
+        }
+        res += ss
+    }
+    return res
+};
+console.log(finalString("string"));
 
 
-// var prisonAfterNDays = function (cells, n) {
-//     for (let i = 0; i < n; i++) {
-//         for (let j = 1; j < cells.length - 1; j++) {
-//             if (cells[i + 1] == cells[i - 1]) {
-//                 cells[i] = 1
-//             }
-//         }
-//     }
-//     return cells
-// };
-// console.log(prisonAfterNDays([0, 1, 0, 1, 1, 0, 0, 1], 7));
+var prisonAfterNDays = function (cells, n) {
+    for (let i = 0; i < n; i++) {
+        for (let j = 1; j < cells.length - 1; j++) {
+            if (cells[i + 1] == cells[i - 1]) {
+                cells[i] = 1
+            }
+        }
+    }
+    return cells
+};
+console.log(prisonAfterNDays([0, 1, 0, 1, 1, 0, 0, 1], 7));
