@@ -148,31 +148,62 @@ console.log(maxSubArray([-1, -2]))
 // console.log(sumOfSquares([2,7,1,19,18,3]));
 
 
-var finalString = function(s) {
-    let res = ''
-    let r = ''
-    for(let ss of s){
-       // r = res
-        if(ss == 'i'){
-            r = res.split('').reverse().join('')
-            res = r
-            continue;
-        }
-        res += ss
-    }
-    return res
-};
-console.log(finalString("string"));
+// var finalString = function(s) {
+//     let res = ''
+//     let r = ''
+//     for(let ss of s){
+//        // r = res
+//         if(ss == 'i'){
+//             r = res.split('').reverse().join('')
+//             res = r
+//             continue;
+//         }
+//         res += ss
+//     }
+//     return res
+// };
+// console.log(finalString("string"));
 
 
-var prisonAfterNDays = function (cells, n) {
-    for (let i = 0; i < n; i++) {
-        for (let j = 1; j < cells.length - 1; j++) {
-            if (cells[i + 1] == cells[i - 1]) {
-                cells[i] = 1
-            }
+// var prisonAfterNDays = function (cells, n) {
+//     for (let i = 0; i < n; i++) {
+//         for (let j = 1; j < cells.length - 1; j++) {
+//             if (cells[i + 1] == cells[i - 1]) {
+//                 cells[i] = 1
+//             }
+//         }
+//     }
+//     return cells
+// };
+// console.log(prisonAfterNDays([0, 1, 0, 1, 1, 0, 0, 1], 7));
+
+
+// console.log(Math.max(3,4,5,6,8,9,6,4,3));
+
+var maxDistance = function (arrays) {
+
+    let minarr = []
+    let maxarr = []
+    for (let i = 0; i < arrays.length; i++) {
+        minarr.push(arrays[i][0])
+        maxarr.push(arrays[i][arrays[i].length - 1])
+    }
+    let distances = []
+    for (let i = 0; i < minarr.length; i++) {
+        // Iterate over each element in the second array
+        for (let j = 0; j < maxarr.length; j++) {
+          // Skip if indices are the same
+          if (i !== j) {
+            // Calculate the distance between minarr[i] and maxarr[j]
+            const distance = Math.abs(minarr[i] - maxarr[j]);
+            
+            // Push the distance to the distances array
+            distances.push(distance);
+          }
         }
     }
-    return cells
+    return Math.max(...distances);
+    
 };
-console.log(prisonAfterNDays([0, 1, 0, 1, 1, 0, 0, 1], 7));
+console.log(maxDistance([[1, 2, 3], [4, 5], [1, 2, 3]]));
+
