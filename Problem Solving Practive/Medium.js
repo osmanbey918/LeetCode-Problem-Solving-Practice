@@ -180,62 +180,81 @@ console.log(maxSubArray([-1, -2]))
 
 // console.log(Math.max(3,4,5,6,8,9,6,4,3));
 
-var maxDistance = function (arrays) {
+// var maxDistance = function (arrays) {
 
-    let minarr = []
-    let maxarr = []
-    for (let i = 0; i < arrays.length; i++) {
-        minarr.push(arrays[i][0])
-        maxarr.push(arrays[i][arrays[i].length - 1])
-    }
-    let distances = []
-    for (let i = 0; i < minarr.length; i++) {
-        // Iterate over each element in the second array
-        for (let j = 0; j < maxarr.length; j++) {
-          // Skip if indices are the same
-          if (i !== j) {
-            // Calculate the distance between minarr[i] and maxarr[j]
-            const distance = Math.abs(minarr[i] - maxarr[j]);
-            
-            // Push the distance to the distances array
-            distances.push(distance);
-          }
+//     let minarr = []
+//     let maxarr = []
+//     for (let i = 0; i < arrays.length; i++) {
+//         minarr.push(arrays[i][0])
+//         maxarr.push(arrays[i][arrays[i].length - 1])
+//     }
+//     let distances = []
+//     for (let i = 0; i < minarr.length; i++) {
+//         // Iterate over each element in the second array
+//         for (let j = 0; j < maxarr.length; j++) {
+//           // Skip if indices are the same
+//           if (i !== j) {
+//             // Calculate the distance between minarr[i] and maxarr[j]
+//             const distance = Math.abs(minarr[i] - maxarr[j]);
+
+//             // Push the distance to the distances array
+//             distances.push(distance);
+//           }
+//         }
+//     }
+//     return Math.max(...distances);
+
+// };
+// console.log(maxDistance([[1, 2, 3], [4, 5], [1, 2, 3]]));
+
+
+
+// /**
+//  * @param {number} n
+//  * @return {number}
+//  */
+// var nthUglyNumber = function (n) {
+//     let ugly = new Array(n);
+//     ugly[0] = 1;
+//     let i2 = 0, i3 = 0, i5 = 0;
+//     let next2 = 2, next3 = 3, next5 = 5;
+
+//     for (let i = 1; i < n; i++) {
+//         let nextUgly = Math.min(next2, Math.min(next3, next5));
+//         ugly[i] = nextUgly;
+
+//         if (nextUgly === next2) {
+//             i2++;
+//             next2 = ugly[i2] * 2;
+//         }
+//         if (nextUgly === next3) {
+//             i3++;
+//             next3 = ugly[i3] * 3;
+//         }
+//         if (nextUgly === next5) {
+//             i5++;
+//             next5 = ugly[i5] * 5;
+//         }
+//     }
+
+//     return ugly[n - 1];
+// };
+
+
+
+// function fn(num) {
+//     return num + 1
+// }
+var minSteps = function (n) {
+    let r = 1;
+    let o = 0;
+    let fn = num => num + num;
+    if (n > 1) {
+        while (r < n) {
+            r = fn(r)
+            o++
         }
     }
-    return Math.max(...distances);
-    
+    return o
 };
-console.log(maxDistance([[1, 2, 3], [4, 5], [1, 2, 3]]));
-
-
-
-/**
- * @param {number} n
- * @return {number}
- */
-var nthUglyNumber = function (n) {
-    let ugly = new Array(n);
-    ugly[0] = 1;
-    let i2 = 0, i3 = 0, i5 = 0;
-    let next2 = 2, next3 = 3, next5 = 5;
-
-    for (let i = 1; i < n; i++) {
-        let nextUgly = Math.min(next2, Math.min(next3, next5));
-        ugly[i] = nextUgly;
-
-        if (nextUgly === next2) {
-            i2++;
-            next2 = ugly[i2] * 2;
-        }
-        if (nextUgly === next3) {
-            i3++;
-            next3 = ugly[i3] * 3;
-        }
-        if (nextUgly === next5) {
-            i5++;
-            next5 = ugly[i5] * 5;
-        }
-    }
-
-    return ugly[n - 1];
-};
+console.log(minSteps(3));
