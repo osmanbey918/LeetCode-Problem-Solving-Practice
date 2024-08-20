@@ -245,16 +245,27 @@ console.log(maxSubArray([-1, -2]))
 // function fn(num) {
 //     return num + 1
 // }
-var minSteps = function (n) {
-    let r = 1;
-    let o = 0;
-    let fn = num => num + num;
-    if (n > 1) {
-        while (r < n) {
-            r = fn(r)
-            o++
-        }
-    }
-    return o
-};
-console.log(minSteps(3));
+// var minSteps = function (n) {
+//     let r = 1;
+//     let o = 0;
+//     let fn = num => num + num;
+//     if (n > 1) {
+//         while (r < n) {
+//             r = fn(r)
+//             o++
+//         }
+//     }
+//     return o
+// };
+// console.log(minSteps(3));
+
+
+let add = num => num + num;
+let sq = num => num * num;
+let r = 0
+while (r <  100) {
+    if (r === 0) r++
+    else if (r < 50) r = add(r);
+    else r = sq(r)
+}
+console.log(r);
