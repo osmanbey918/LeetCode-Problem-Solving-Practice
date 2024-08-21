@@ -260,12 +260,36 @@ console.log(maxSubArray([-1, -2]))
 // console.log(minSteps(3));
 
 
-let add = num => num + num;
-let sq = num => num * num;
-let r = 0
-while (r <  100) {
-    if (r === 0) r++
-    else if (r < 50) r = add(r);
-    else r = sq(r)
-}
-console.log(r);
+// let add = num => num + num;
+// let sq = num => num * num;
+// let r = 0
+// while (r <  100) {
+//     if (r === 0) r++
+//     else if (r < 50) r = add(r);
+//     else r = sq(r)
+// }
+// console.log(r);
+
+
+var longestIdealString = function (s, k) {
+    let ideal = '';
+    ideal += s[0]; 
+    for (let i = 0; i < s.length; i++) {
+        let added = false;
+        for (let j = i + 1; j < s.length; j++) {
+            if (Math.abs(s.charCodeAt(i) - s.charCodeAt(j)) <= k) {
+                ideal += s[j];
+                i = j - 1; 
+                added = true; 
+                break; 
+            }
+        }
+        
+        if (!added) break;
+    }
+    
+    return ideal;
+};
+
+console.log(longestIdealString("pvjcci", 4)); // Example output
+
