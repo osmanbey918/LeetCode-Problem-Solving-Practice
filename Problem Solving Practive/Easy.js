@@ -456,38 +456,38 @@ console.log(obj.latest); // "test"*/
 // console.log(buddyStrings("aa", "aa"));
 
 
-var countStudents = function (students, sandwiches) {
-    let flag = false;
-    for (let i = 0; i < sandwiches.length; i++) {
-        for (let j = 0; j < students.length; j++) {
-            if (sandwiches[i] === students[j]) {
-                sandwiches.push();
-                students.splice(j, 1);
-                flag = true
-            }
-            students.push
+// var countStudents = function (students, sandwiches) {
+//     let flag = false;
+//     for (let i = 0; i < sandwiches.length; i++) {
+//         for (let j = 0; j < students.length; j++) {
+//             if (sandwiches[i] === students[j]) {
+//                 sandwiches.push();
+//                 students.splice(j, 1);
+//                 flag = true
+//             }
+//             students.push
 
-        }
-        if (flag === false) {
-            return students.length;
-        }
-    }
-    return students.length;
-};
-console.log(countStudents([1,1,1,0,0,1], [1,0,0,0,1,1]));
+//         }
+//         if (flag === false) {
+//             return students.length;
+//         }
+//     }
+//     return students.length;
+// };
+// console.log(countStudents([1,1,1,0,0,1], [1,0,0,0,1,1]));
 
 
-var summaryRanges = function (nums) {
-    let result = []
-    let start = nums[0]
-    for (let i = 1; i <= nums.length; i++) {
-        if (nums[i] - nums[i - 1] == 1) continue
-        if (start == nums[i - 1]) {
-            result.push(`${start}`)
-        } else {
-            result.push(`${start}->${nums[i - 1]}`)
-        }
-        start = nums[i]
-    }
-    return result
-};
+// var summaryRanges = function (nums) {
+//     let result = []
+//     let start = nums[0]
+//     for (let i = 1; i <= nums.length; i++) {
+//         if (nums[i] - nums[i - 1] == 1) continue
+//         if (start == nums[i - 1]) {
+//             result.push(`${start}`)
+//         } else {
+//             result.push(`${start}->${nums[i - 1]}`)
+//         }
+//         start = nums[i]
+//     }
+//     return result
+// };
