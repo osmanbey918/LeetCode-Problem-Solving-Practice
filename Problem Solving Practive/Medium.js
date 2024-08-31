@@ -293,12 +293,12 @@ console.log(maxSubArray([-1, -2]))
 
 // console.log(longestIdealString("pvjcci", 4)); // Example output
 
-// var findComplement = function(num) {
-//     if (num === 0) return 1;
+var findComplement = function(num) {
+    if (num === 0) return 1;
 
-// const bitLength = num.toString(2).length;
+const bitLength = num.toString(2).length;
 
-// const mask = (1 << bitLength) - 1;
+const mask = (1 << bitLength) - 1;
 
-// return num ^ mask;
-// };
+return num ^ mask;
+};
