@@ -575,3 +575,22 @@ var numDifferentIntegers = function(word) {
  }
  return nums.size;
 };
+
+var chalkReplacer = function (chalk, k) {
+
+    const totalChalk = chalk.reduce((sum, c) => sum + c, 0);
+
+    // Find the remaining chalk after completing as many full cycles as possible
+    let remainingChalk = k % totalChalk;
+
+    // Determine which student will replace the chalk
+    for (let i = 0; i < chalk.length; i++) {
+        if (remainingChalk < chalk[i]) {
+            return i;
+        }
+        remainingChalk -= chalk[i];
+    }
+
+    s
+    return -1;
+};
