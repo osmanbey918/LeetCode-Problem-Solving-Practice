@@ -420,30 +420,30 @@ let ol = 0
 for (let i = 0; i < text.length; i++) {
 switch (text[i]) {
 case 'b':
-    b++;
-    break;
+b++;
+break;
 case 'a':
-    a++;
-    break;
+a++;
+break;
 case 'n':
-    n++;
-    break;
+n++;
+break;
 case 'l':
-    cl++;
-    if (cl == 2) {
-        l++;
-        cl = 0
-    }
-    break;
+cl++;
+if (cl == 2) {
+    l++;
+    cl = 0
+}
+break;
 case 'o':
-    ol++;
-    if (ol == 2) {
-        o++;
-        ol = 0
-    }
-    break;
+ol++;
+if (ol == 2) {
+    o++;
+    ol = 0
+}
+break;
 default:
-    break;
+break;
 }
 }
 
@@ -536,61 +536,92 @@ console.log(plusOne([1, 2, 9]))*/
 
 
 
-var maxSubArray = function (nums) {
-   // nums.sort((a,b) => a - b)
-   let arr = []
-   let res = 0
-    for (const n of nums) {
-        if(n > 0){
-            arr.push(n)
-            res += n
-        }
-    }
-    return res
+// var maxSubArray = function (nums) {
+//    // nums.sort((a,b) => a - b)
+//    let arr = []
+//    let res = 0
+//     for (const n of nums) {
+//         if(n > 0){
+//             arr.push(n)
+//             res += n
+//         }
+//     }
+//     return res
+// }
+// console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
+
+// var findMaxAverage = function(nums, k) {
+//     let avg = 0;
+//     let i;
+//     for(i=0; i<k; i++) {
+//         avg += nums[i];
+//     }
+//     let maks = avg/k;
+//     // console.log(max);
+//     for(let x=i; x<nums.length; x++) {
+//         avg+=nums[x];
+//         avg-=nums[x-i];
+//         maks = Math.max(maks, avg/k);
+//     }
+//     return maks;
+// };
+
+
+// var numDifferentIntegers = function(word) {
+//     word = word.replaceAll(/[a-z]/g, " ").split(" ");
+//  const nums = new Set();
+//  for(const w of word) {
+//      if(w !== "" && !nums.has(BigInt(w))) nums.add(BigInt(w));
+//  }
+//  return nums.size;
+// };
+
+// var chalkReplacer = function (chalk, k) {
+
+// const totalChalk = chalk.reduce((sum, c) => sum + c, 0);
+
+// // Find the remaining chalk after completing as many full cycles as possible
+// let remainingChalk = k % totalChalk;
+
+// // Determine which student will replace the chalk
+// for (let i = 0; i < chalk.length; i++) {
+//     if (remainingChalk < chalk[i]) {
+//         return i;
+//     }
+//     remainingChalk -= chalk[i];
+// }
+
+// s
+// return -1;
+
+
+//     let totals = chalk.reduce((total, sum) => total + sum, 0);
+//     let remaining = k % totals;
+//     for (let i = 0; i < chalk.length; i++) {
+//         if (remaining < chalk[i]) return i;
+//          remaining -= chalk[i];
+
+//     }
+//     console.log(i)
+//     return -1
+// };
+// console.log(chalkReplacer([3,4,1,2], 25));
+let s = 'abodj'
+let sn = ''
+let k = 2
+for (let i = 0; i < s.length; i++) {
+    sn += s.charCodeAt(i) - 96
 }
-console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
-
-var findMaxAverage = function(nums, k) {
-    let avg = 0;
-    let i;
-    for(i=0; i<k; i++) {
-        avg += nums[i];
+let sum = 0
+while (k > 0) {
+    for (let char of sn) {
+        sum += parseInt(char, 10); 
     }
-    let maks = avg/k;
-    // console.log(max);
-    for(let x=i; x<nums.length; x++) {
-        avg+=nums[x];
-        avg-=nums[x-i];
-        maks = Math.max(maks, avg/k);
-    }
-    return maks;
-};
+    sn = sum.toString()
+    sum = 0;
+    k--
+}
 
-
-var numDifferentIntegers = function(word) {
-    word = word.replaceAll(/[a-z]/g, " ").split(" ");
- const nums = new Set();
- for(const w of word) {
-     if(w !== "" && !nums.has(BigInt(w))) nums.add(BigInt(w));
- }
- return nums.size;
-};
-
-var chalkReplacer = function (chalk, k) {
-
-    const totalChalk = chalk.reduce((sum, c) => sum + c, 0);
-
-    // Find the remaining chalk after completing as many full cycles as possible
-    let remainingChalk = k % totalChalk;
-
-    // Determine which student will replace the chalk
-    for (let i = 0; i < chalk.length; i++) {
-        if (remainingChalk < chalk[i]) {
-            return i;
-        }
-        remainingChalk -= chalk[i];
-    }
-
-    s
-    return -1;
-};
+console.log(sum);
+console.log(sn);
+console.log(s.charAt('a'));
