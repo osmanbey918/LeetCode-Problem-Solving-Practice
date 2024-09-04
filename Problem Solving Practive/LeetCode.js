@@ -606,22 +606,29 @@ console.log(plusOne([1, 2, 9]))*/
 //     return -1
 // };
 // console.log(chalkReplacer([3,4,1,2], 25));
-let s = 'abodj'
-let sn = ''
-let k = 2
-for (let i = 0; i < s.length; i++) {
-    sn += s.charCodeAt(i) - 96
-}
-let sum = 0
-while (k > 0) {
-    for (let char of sn) {
-        sum += parseInt(char, 10); 
-    }
-    sn = sum.toString()
-    sum = 0;
-    k--
-}
+// let s = 'abodj'
+// let sn = ''
+// let k = 2
+// for (let i = 0; i < s.length; i++) {
+//     sn += s.charCodeAt(i) - 96
+// }
+// let sum = 0
+// while (k > 0) {
+//     for (let char of sn) {
+//         sum += parseInt(char, 10); 
+//     }
+//     sn = sum.toString()
+//     sum = 0;
+//     k--
+// }
 
-console.log(sum);
-console.log(sn);
-console.log(s.charAt('a'));
+// console.log(sum);
+// console.log(sn);
+// console.log(s.charAt('a'));
+let num = 11891;
+let numArr = Array.from(String(num), Number);
+
+let max = Math.max(...numArr);
+let min = Math.min(...numArr);
+
+console.log(max);
