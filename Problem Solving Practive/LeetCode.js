@@ -624,85 +624,82 @@ console.log(plusOne([1, 2, 9]))*/
 
 // console.log(sum);
 // console.log(sn);
-// console.log(s.charAt('a'));
-let num = 11891;
-let numArr = Array.from(String(num), Number);
+// // console.log(s.charAt('a'));
+// let num = 11891;
+// let numArr = Array.from(String(num), Number);
 
-let max = Math.max(...numArr);
-let min = Math.min(...numArr);
+// let max = Math.max(...numArr);
+// let min = Math.min(...numArr);
 
-console.log(max);
+// console.log(max);
 
-var missingRolls = function(rolls, mean, n) {
-    let m = rolls.length;
-   let totalSum = mean * (n + m);
-   let observedSum = rolls.reduce((a, b) => a + b, 0);
+// var missingRolls = function(rolls, mean, n) {
+//     let m = rolls.length;
+//    let totalSum = mean * (n + m);
+//    let observedSum = rolls.reduce((a, b) => a + b, 0);
    
-   let missingSum = totalSum - observedSum;
+//    let missingSum = totalSum - observedSum;
    
-   if (missingSum < n || missingSum > 6 * n) {
-       return [];
-   }
+//    if (missingSum < n || missingSum > 6 * n) {
+//        return [];
+//    }
    
-   let base = Math.floor(missingSum / n);
-   let remainder = missingSum % n;
+//    let base = Math.floor(missingSum / n);
+//    let remainder = missingSum % n;
    
-   let result = new Array(n).fill(base);
-   for (let i = 0; i < remainder; i++) {
-       result[i] += 1;
-   }
+//    let result = new Array(n).fill(base);
+//    for (let i = 0; i < remainder; i++) {
+//        result[i] += 1;
+//    }
    
-   return result;
-};
+//    return result;
+// };
 
-var modifiedList = function (nums, head) {
-    let max = -1;
-    for (let num of nums) {
-        max = num > max ? num : max;
-    }
+// var modifiedList = function (nums, head) {
+//     let max = -1;
+//     for (let num of nums) {
+//         max = num > max ? num : max;
+//     }
 
-    let freq = new Array(max + 1).fill(false);
+//     let freq = new Array(max + 1).fill(false);
 
-    for (let num of nums) freq[num] = true;
+//     for (let num of nums) freq[num] = true;
 
-    let temp = new ListNode();
-    let current = temp;
+//     let temp = new ListNode();
+//     let current = temp;
 
-    while (head != null) {
-        if (head.val >= freq.length || freq[head.val] == false) {
-            current.next = head;
-            current = current.next;
-        }
-        head = head.next;
-    }
+//     while (head != null) {
+//         if (head.val >= freq.length || freq[head.val] == false) {
+//             current.next = head;
+//             current = current.next;
+//         }
+//         head = head.next;
+//     }
 
-    current.next = null;
-    return temp.next;
-};
+//     current.next = null;
+//     return temp.next;
+// };
 
-/**
- * @param {number} n
- * @return {string[]}
- */
-var generateParenthesis = function(n) {
-    const res = [];
 
-   function dfs(openP, closeP, s) {
-       if (openP === closeP && openP + closeP === n * 2) {
-           res.push(s);
-           return;
-       }
+// var generateParenthesis = function(n) {
+//     const res = [];
 
-       if (openP < n) {
-           dfs(openP + 1, closeP, s + "(");
-       }
+//    function dfs(openP, closeP, s) {
+//        if (openP === closeP && openP + closeP === n * 2) {
+//            res.push(s);
+//            return;
+//        }
 
-       if (closeP < openP) {
-           dfs(openP, closeP + 1, s + ")");
-       }
-   }
+//        if (openP < n) {
+//            dfs(openP + 1, closeP, s + "(");
+//        }
 
-   dfs(0, 0, "");
+//        if (closeP < openP) {
+//            dfs(openP, closeP + 1, s + ")");
+//        }
+//    }
 
-   return res;    
-};
+//    dfs(0, 0, "");
+
+//    return res;    
+// };
