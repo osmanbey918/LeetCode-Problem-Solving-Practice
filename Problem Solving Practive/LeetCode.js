@@ -703,14 +703,14 @@ console.log(plusOne([1, 2, 9]))*/
 
 //    return res;    
 // };
-// var findDisappearedNumbers = function (nums) {
-//     let obj = {}
-//     for (let n of nums) {
-//         obj[n] = 1
-//     }
-//     let arr = []
-//     for (let i = 1; i <= nums.length; i++) {
-//         if (!obj[i]) arr.push(i)
-//     }
-//     return arr
-// };
+var findDisappearedNumbers = function (nums) {
+    let obj = {}
+    for (let n of nums) {
+        obj[n] = 1
+    }
+    let arr = []
+    for (let i = 1; i <= nums.length; i++) {
+        if (!obj[i]) arr.push(i)
+    }
+    return arr
+};
