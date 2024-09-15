@@ -271,24 +271,24 @@ console.log(maxSubArray([-1, -2]))
 // console.log(r);
 
 
-// var longestIdealString = function (s, k) {
-//     let ideal = '';
-//     ideal += s[0]; 
-//     for (let i = 0; i < s.length; i++) {
-//         let added = false;
-//         for (let j = i + 1; j < s.length; j++) {
-//             if (Math.abs(s.charCodeAt(i) - s.charCodeAt(j)) <= k) {
-//                 ideal += s[j];
-//                 i = j - 1; 
-//                 added = true; 
-//                 break; 
-//             }
-//         }
+var longestIdealString = function (s, k) {
+    let ideal = '';
+    ideal += s[0]; 
+    for (let i = 0; i < s.length; i++) {
+        let added = false;
+        for (let j = i + 1; j < s.length; j++) {
+            if (Math.abs(s.charCodeAt(i) - s.charCodeAt(j)) <= k) {
+                ideal += s[j];
+                i = j - 1; 
+                added = true; 
+                break; 
+            }
+        }
         
-//         if (!added) break;
-//     }
+        if (!added) break;
+    }
     
-//     return ideal;
-// };
+    return ideal;
+};
 
-// console.log(longestIdealString("pvjcci", 4)); // Example output
+console.log(longestIdealString("pvjcci", 4)); // Example output
